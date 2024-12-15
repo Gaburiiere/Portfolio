@@ -231,108 +231,6 @@ section.sobre .flex{
     transition: 2s;
 }
 
-/*ESTILO DAS ESPECIALIDADES*/
-section.especialidades{
-    padding: 40px 4%;
-}
-section.especialidades .flex{
-    gap: 60px;
-}
-
-.especialidades .especialidades-box{
-    color: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    border: 2px solid #ffffff4c;
-    margin-top: 45px;
-    transition: 1s;
-}
-
-.especialidades .especialidades-box:hover{
-    transform: scale(1.05);
-    box-shadow: 0  0  8px #9a19bea3;
-}
-
-
-.especialidades .especialidades-box h3{
-    font-size: 20px;
-    margin: 15px 0;
-    transition: 1s;
-
-}
-.especialidades .titulo p{
-    font-family: 'Poppins';
-}
-
-/*ESTILO DAS MAGIA*/
-section.magia{
-    padding: 40px 4%;
-}
-
-section.magia .flex {
-    gap: 60px;
-}
-.magia .magia-box{
-    color: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    border: 2px solid #ffffff4c;
-    margin-top: 45px;
-    transition: 1s;
-}
-
-.magia .magia-box:hover{
-    transform: scale(1.05);
-    box-shadow: 0  0  8px #9a19bea3;
-}
-
-
-.magia .magia-box h3{
-    font-size: 20px;
-    margin: 15px 0;
-}
-
-.magia .titulo p{
-    font-family: 'Poppins';
-}
-
-/*ESTILO DAS COISAS QUE GOSTO*/
-section.coisas-que-gosto{
-    padding: 40px 4%;
-}
-
-section.coisas-que-gosto .flex{
-    align-items: center;
-    justify-content: center;
-    gap: 90px;
-}
-
-.coisas-que-gosto h1{
-    color: #fff;
-    font-size: 25px;
-    line-height: 30px;
-}
-
-.coisas-que-gosto .txt-coisas-que-gosto{
-    text-align: center;
-}
-
-.coisas-que-gosto .txt-coisas-que-gosto span{
-    color: #b337d5;
-}
-
-.coisas-que-gosto .txt-coisas-que-gosto p{
-    color: #fff;
-    margin: 15px 0;
-    text-align: justify;
-    font-family: 'Poppins';
-}
-
-.coisas-que-gosto .txt-coisas-que-gosto button{
-height: 25px;
-color: #fff;
-background-color: #9a19be;
-}
 
 /*ESTILO DO PORTFÓLIO */ 
 section.portfolio{
@@ -340,7 +238,7 @@ section.portfolio{
     box-shadow: 0 0 40px 10px #ffffff1b;
 }
 section.portfolio .flex{
-   gap: 50px;
+   gap: 100;
    justify-content: space-around;
    margin-top: 60px;
 }
@@ -381,6 +279,265 @@ section.portfolio .flex{
 .overlay:hover{
     opacity: 1;
 }
+
+
+
+/* ESTILO DAS ESPECIALIDADES */
+section.especialidades {
+    padding: 80px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: rgba(77, 19, 126, 0.2); /* Fundo com cor mais destacada */
+    border: 2px solid #b89dbfa3; /* Cor da borda combinando */
+    margin-top: 45px;
+    transition: 0.5s ease;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #9a19be;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: 600; /* Deixa o título mais elegante */
+    color: #e0aaff; /* Cor personalizada */
+    text-transform: none; /* Remove o caixa alta */
+    transition: 0.3s ease;
+}
+
+.especialidades .especialidades-box p {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* ESTILO DAS MAGIA */
+section.magia {
+    padding: 40px 4%;
+}
+
+section.magia .flex {
+    gap: 60px;
+}
+
+.magia .magia-box {
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: rgba(77, 19, 126, 0.2); /* Fundo com cor mais destacada */
+    border: 2px solid #b89dbfa3;
+    margin-top: 45px;
+    transition: 0.5s ease;
+}
+
+.magia .magia-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #9a19be;
+}
+
+.magia .magia-box h3 {
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: 600;
+    color: #e0aaff; /* Mantém a mesma cor para consistência */
+    text-transform: none; /* Remove o caixa alta */
+    transition: 0.3s ease;
+}
+
+.magia .magia-box p {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+
+
+
+/* Container pai */
+.skills-container {
+    display: flex; /* Alinha os elementos lado a lado */
+    justify-content: space-between; /* Espaço entre as colunas */
+    align-items: flex-start; /* Alinha o topo das colunas */
+    gap: 40px; /* Espaço entre os elementos */
+    padding: 40px 4%; /* Espaçamento geral */
+  }
+  
+  .skills h1 {
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #b337d5;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+  .skills ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .skills ul li {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  /* Container pai */
+.skills-container {
+    display: flex; /* Alinha os elementos lado a lado */
+    justify-content: center; /* Centraliza os elementos no centro da tela */
+    align-items: flex-start; /* Alinha o topo das colunas */
+    gap: 60px; /* Espaço entre as colunas */
+    padding: 40px 4%; /* Espaçamento geral */
+    max-width: 1200px; /* Define uma largura máxima para o container */
+    margin: 0 auto; /* Centraliza o container na página */
+  }
+  
+  /* Seções Soft Skills e Hard Skills */
+  .skills .soft,
+  .skills .hard-skills {
+    flex: 1; /* Garante que os elementos cresçam igualmente */
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  /* Títulos das seções */
+  .skills h1 {
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #b337d5;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+  /* Listas */
+  .skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skills ul li {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+
+/*ESTILO DAS COISAS QUE GOSTO*/
+section.coisas-que-gosto{
+    padding: 40px 4%;
+}
+
+section.coisas-que-gosto .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    display: flex;
+    flex-direction: column;
+}
+.coisas-que-gosto .txt-coisas-que-gosto p strong {
+    color: #e5aaf5; /* Cor roxa que você já usou nos títulos */
+    font-weight: bold; /* Isso garante que o texto continue com a aparência de forte */
+}
+
+.estrela {
+    color: purple; /* Define a cor roxa para a estrela */
+  }
+  
+.coisas-que-gosto .item {
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(200, 0, 255, 0.2);
+    border: 1px solid rgba(158, 158, 158, 0.3); /* Contorno branco sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.coisas-que-gosto .item:hover {
+    transform: scale(1.05); /* Zoom */
+    box-shadow: 0 8px 12px rgba(164, 0, 209, 0.3); /* Sombra mais intensa */
+    border-color: rgb(0, 0, 0); /* Contorno branco mais visível ao hover */
+}
+
+
+
+.coisas-que-gosto h1 {
+    color: #fff;
+    font-size: 30px;
+    line-height: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.coisas-que-gosto h2 {
+    color: #b337d5;
+    font-size: 22px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.coisas-que-gosto .txt-coisas-que-gosto {
+    max-width: 800px;
+    margin: auto;
+}
+
+.coisas-que-gosto .txt-coisas-que-gosto p {
+    color: #fff;
+    margin: 10px 0 20px;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.coisas-que-gosto .txt-coisas-que-gosto {
+    color: #e0aaff;
+}
+
+.coisas-que-gosto .item {
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(200, 0, 255, 0.2);
+}
+
+.coisas-que-gosto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hard-skills ul li {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 18px;
+}
+
+
 
 /*ESTILO DO FORMULÁRIO DE CONTATO*/
 section.formulario{
@@ -545,6 +702,9 @@ section.portfolio{
     max-width: 360px;
     margin: 0 auto;
 }
+section.portfolio .flex{
+    gap: 60px;
+}
 
 /* RODAPÉ */
 
@@ -570,5 +730,24 @@ footer .line-footer{
   }
 
 
+  section.sobre {
+    margin-bottom: 100px; /* Espaçamento específico para a seção "sobre" */
+}
 
+section.coisas-que-gosto {
+    margin-bottom: 60px;
+}
+
+
+.foote {
+    background-color: #222; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto branca */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    padding: 15px 0; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+   font-family: 'Poppins', sans-serif;
+    position: relative; /* Permite que o rodapé fique no final do conteúdo */
+    width: 100%; /* Garante que ocupa toda a largura */
+  }
+  
   
