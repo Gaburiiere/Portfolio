@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabrielle Rosa | UX/UI Designer</title>
+<meta name="description" content="Portfólio de Gabrielle Rosa, UX/UI Designer e Designer Gráfica.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400..900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="images/LOOOGO.png">
+</head>
+<body>
+
+<!-- BOOT / LOADING SCREEN -->
+<div id="boot" class="boot">
+  <div class="boot-inner">
+    <img src="images/LOOOGO.png" alt="" class="boot-logo">
+    <p class="boot-title">GABRIELLE&nbsp;ROSA<span class="cursor-blink">_</span></p>
+    <div class="boot-bar"><div class="boot-bar-fill" id="boot-fill"></div></div>
+    <p class="boot-hint" id="boot-hint">carregando portfólio<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+    <p class="boot-skip">clique ou pressione qualquer tecla para pular</p>
+  </div>
+</div>
+
+<canvas id="bg-canvas"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<!-- sound toggle -->
+<button class="sound-toggle" id="sound-toggle" aria-label="Ativar som">
+  <i class="bi bi-volume-mute-fill"></i>
+  <span class="sound-toggle-label">som</span>
+</button>
+
+<!-- HUD HEADER -->
+<header class="hud" id="hud">
+  <div class="xp-bar"><div class="xp-fill" id="xp-fill"></div></div>
+  <div class="wrap hud-inner">
+    <a href="#home" class="brand">
+      <img src="images/LOOOGO.png" alt="logo">
+      <span>Gabrielle<em>.</em>Rosa</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navegação principal">
+      <a href="#home" class="nav-link active" data-section="home"><i class="bi bi-house-door-fill"></i> Home</a>
+      <a href="#projetos" class="nav-link" data-section="projetos"><i class="bi bi-joystick"></i> Projetos</a>
+      <a href="#sobre" class="nav-link" data-section="sobre"><i class="bi bi-person-badge-fill"></i> Sobre</a>
+      <a href="#habilidades" class="nav-link" data-section="habilidades"><i class="bi bi-diagram-3-fill"></i> Skills</a>
+      <a href="#conquistas" class="nav-link" data-section="conquistas"><i class="bi bi-trophy-fill"></i> Conquistas</a>
+      <a href="#contato" class="nav-link" data-section="contato"><i class="bi bi-broadcast"></i> Contato</a>
+    </nav>
+
+    <div class="hud-actions">
+      <a href="files/curriculo.pdf" download="Curriculo-Gabrielle-Rosa" class="btn btn-ghost">
+        <i class="bi bi-download"></i> <span>CV</span>
+      </a>
+      <button class="btn-burger" id="btn-burger" aria-label="Abrir menu">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav-mobile" id="nav-mobile">
+    <a href="#home" class="nav-link" data-section="home">Home</a>
+    <a href="#projetos" class="nav-link" data-section="projetos">Projetos</a>
+    <a href="#sobre" class="nav-link" data-section="sobre">Sobre</a>
+    <a href="#habilidades" class="nav-link" data-section="habilidades">Skills</a>
+    <a href="#conquistas" class="nav-link" data-section="conquistas">Conquistas</a>
+    <a href="#contato" class="nav-link" data-section="contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO / TITLE SCREEN -->
+  <section class="hero" id="home">
+    <div class="grid-floor" aria-hidden="true"></div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="press-start blink">◆ PRESS START ◆</p>
+        <h1 class="glitch" data-text="GABRIELLE ROSA">GABRIELLE<br>ROSA</h1>
+        <p class="hero-class">
+          <span class="tag">UX/UI Designer</span>
+          <span class="tag">Design Gráfico</span>
+        </p>
+        <p class="hero-quote">Como a magia, o <strong>ux/ui</strong> transforma o comum em extraordinário. Aqui, design vai além da estética: é sobre criar soluções que encantam e funcionam.</p>
+
+        <ul class="game-menu" id="game-menu">
+          <li><a href="#projetos" data-idx="01"><span class="idx">01</span> Projetos <i class="bi bi-chevron-right"></i></a></li>
+          <li><a href="#sobre" data-idx="02"><span class="idx">02</span> Sobre mim <i class="bi bi-chevron-right"></i></a></li>
+          <li><a href="#habilidades" data-idx="03"><span class="idx">03</span> Habilidades <i class="bi bi-chevron-right"></i></a></li>
+          <li><a href="#contato" data-idx="04"><span class="idx">04</span> Contato <i class="bi bi-chevron-right"></i></a></li>
+        </ul>
+        <p class="menu-hint"><i class="bi bi-mouse2"></i> clique num item, ou use <kbd>↑</kbd><kbd>↓</kbd> <kbd>Enter</kbd></p>
+      </div>
+
+      <div class="hero-avatar">
+        <div class="avatar-stage">
+          <div class="avatar-platform"></div>
+          <div class="avatar-ring">
+            <span class="hud-corner hud-corner-tl"></span>
+            <span class="hud-corner hud-corner-tr"></span>
+            <span class="hud-corner hud-corner-bl"></span>
+            <span class="hud-corner hud-corner-br"></span>
+            <img src="images/hero-avatar.jpg" alt="Avatar de Gabrielle Rosa">
+          </div>
+        </div>
+        <div class="avatar-nameplate">
+          <div class="avatar-nameplate-row">
+            <span class="avatar-nameplate-name">Gabrielle Rosa</span>
+            <span class="avatar-nameplate-lvl">LVL <strong>10</strong></span>
+          </div>
+          <div class="avatar-xp-bar"><div class="avatar-xp-fill"></div></div>
+          <span class="avatar-nameplate-class">UX/UI Designer</span>
+        </div>
+      </div>
+    </div>
+    <a href="#projetos" class="scroll-down" aria-label="Rolar para baixo"><i class="bi bi-chevron-double-down"></i></a>
+  </section>
+
+  <!-- PROJETOS / LOOT CARDS -->
+  <section class="projetos" id="projetos">
+    <div class="wrap">
+      <h2 class="title"><span class="hash">#01</span> Inventário de <span>Projetos</span></h2>
+      <p class="section-sub">Clique em um card pra ver os detalhes da missão.</p>
+
+      <h3 class="sub-heading"><i class="bi bi-joystick"></i> UX/UI Design</h3>
+      <div class="loot-grid">
+        <article class="loot-card rarity-epic" style="--img: url('images/My_site.png');">
+          <div class="loot-card-inner">
+            <div class="loot-card-front">
+              <div class="loot-card-img"></div>
+              <span class="rarity-tag">Lendário</span>
+              <span class="flip-hint"><i class="bi bi-arrow-repeat"></i> clique</span>
+              <h3>HiperFoco</h3>
+              <span class="status status-done"><i class="bi bi-check-circle-fill"></i> Concluído</span>
+            </div>
+            <div class="loot-card-back">
+              <h3>HiperFoco</h3>
+              <p>App para ajudar estudantes com TDAH a organizar os estudos. Case completo: problema, pesquisa, personas, design system e protótipo.</p>
+              <a href="projetos/hiperfoco/index.html" class="btn btn-outline btn-sm">Ver case completo <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="loot-card rarity-epic" style="--img: url('images/leafpallet_banner.jpg');">
+          <div class="loot-card-inner">
+            <div class="loot-card-front">
+              <div class="loot-card-img"></div>
+              <span class="rarity-tag">Lendário</span>
+              <span class="flip-hint"><i class="bi bi-arrow-repeat"></i> clique</span>
+              <h3>Leaf Pallet</h3>
+              <span class="status status-done"><i class="bi bi-check-circle-fill"></i> Concluído</span>
+            </div>
+            <div class="loot-card-back">
+              <h3>Leaf Pallet</h3>
+              <p>Plataforma de recursos e aprendizado para designers de UI. Case completo, do problema ao protótipo de alta fidelidade.</p>
+              <a href="projetos/leafpallet/index.html" class="btn btn-outline btn-sm">Ver case completo <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="loot-card rarity-rare" style="--img: url('projetos/agenda-saude/img/banner.png');">
+          <div class="loot-card-inner">
+            <div class="loot-card-front">
+              <div class="loot-card-img"></div>
+              <span class="rarity-tag">Em forja</span>
+              <span class="flip-hint"><i class="bi bi-arrow-repeat"></i> clique</span>
+              <h3>Agenda Saúde</h3>
+              <span class="status status-progress"><i class="bi bi-hourglass-split"></i> Em andamento</span>
+            </div>
+            <div class="loot-card-back">
+              <h3>Agenda Saúde</h3>
+              <p>App para organizar consultas e cuidados de saúde. Level ainda em construção.</p>
+              <a href="projetos/agenda-saude/index.html" class="btn btn-outline btn-sm">Ver fase <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="loot-card rarity-epic" style="--img: url('projetos/lojas-competicao/img/redesign-preview.png');">
+          <div class="loot-card-inner">
+            <div class="loot-card-front">
+              <div class="loot-card-img"></div>
+              <span class="rarity-tag">Épico</span>
+              <span class="flip-hint"><i class="bi bi-arrow-repeat"></i> clique</span>
+              <h3>Lojas Competição</h3>
+              <span class="status status-done"><i class="bi bi-check-circle-fill"></i> Concluído</span>
+            </div>
+            <div class="loot-card-back">
+              <h3>Lojas Competição</h3>
+              <p>Redesign de UI para o e-commerce da Lojas Competição, rede com 50+ lojas no Rio.</p>
+              <a href="projetos/lojas-competicao/index.html" class="btn btn-outline btn-sm">Ver case completo <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="loot-card rarity-epic" style="--img: url('projetos/hub-petz/img/screen1.png');">
+          <div class="loot-card-inner">
+            <div class="loot-card-front">
+              <div class="loot-card-img"></div>
+              <span class="rarity-tag">Épico</span>
+              <span class="flip-hint"><i class="bi bi-arrow-repeat"></i> clique</span>
+              <h3>HUB Petz</h3>
+              <span class="status status-done"><i class="bi bi-check-circle-fill"></i> Concluído</span>
+            </div>
+            <div class="loot-card-back">
+              <h3>HUB de Conteúdo Petz</h3>
+              <p>Hub educativo com artigos, ferramentas interativas e comunidade para tutores de pets.</p>
+              <a href="projetos/hub-petz/index.html" class="btn btn-outline btn-sm">Ver case completo <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="graphic-section">
+        <h3 class="sub-heading"><i class="bi bi-palette2"></i> Design Gráfico</h3>
+        <p class="section-sub" style="margin-bottom: 26px;">Uma seleção das melhores peças: artes, campanhas e social media. Clique numa pra ampliar.</p>
+        <div class="marquee" id="graphic-marquee">
+          <div class="marquee-track" id="graphic-marquee-track">
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/capa-do-sptifyr-zero-um-dj-soneca-1.png,projetos/design-grafico/full/capa-do-sptifyr-zero-um-dj-soneca-2.png,projetos/design-grafico/full/capa-do-sptifyr-zero-um-dj-soneca-3.png,projetos/design-grafico/full/capa-do-sptifyr-zero-um-dj-soneca-4.png,projetos/design-grafico/full/capa-do-sptifyr-zero-um-dj-soneca-5.png,projetos/design-grafico/full/capa-do-sptifyr-zero-um-dj-soneca-6.png" data-title="Capa Spotify: DJ Soneca">
+              <img src="projetos/design-grafico/full/capa-do-sptifyr-zero-um-dj-soneca-1.png" alt="Capa do Spotify: Zero Um - DJ Soneca"><span class="graphic-card-label">Capa Spotify: DJ Soneca</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/chega-de-saudade-3.png,projetos/design-grafico/full/chega-de-saudade-4.png,projetos/design-grafico/full/chega-de-saudade-2.png" data-title="Chega de Saudade">
+              <img src="projetos/design-grafico/full/chega-de-saudade-3.png" alt="Chega de Saudade"><span class="graphic-card-label">Chega de Saudade</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/banner-colecao-infantil-1.png,projetos/design-grafico/full/banner-colecao-infantil-2.png,projetos/design-grafico/full/banner-colecao-infantil-3.png,projetos/design-grafico/full/banner-colecao-infantil-4.png" data-title="Banner: Coleção Infantil">
+              <img src="projetos/design-grafico/full/banner-colecao-infantil-1.png" alt="Banner: Coleção Infantil"><span class="graphic-card-label">Banner: Coleção Infantil</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/colecao-infantil-delicadeza-1.png,projetos/design-grafico/full/colecao-infantil-delicadeza-2.png,projetos/design-grafico/full/colecao-infantil-delicadeza-3.png,projetos/design-grafico/full/colecao-infantil-delicadeza-4.png,projetos/design-grafico/full/colecao-infantil-delicadeza-5.png,projetos/design-grafico/full/colecao-infantil-delicadeza-6.png,embed:https://www-ccv.adobe.io/v1/player/ccv/-2KB46XeuU2/embed?bgcolor=%23191919&amp;lazyLoading=true&amp;api_key=BehancePro2View" data-title="Coleção Infantil: Delicadeza em Cada Detalhe">
+              <img src="projetos/design-grafico/full/colecao-infantil-delicadeza-1.png" alt="Coleção Infantil: Delicadeza em Cada Detalhe"><span class="graphic-card-play"><i class="bi bi-play-fill"></i></span><span class="graphic-card-label">Coleção Infantil: Delicadeza</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/carrossel-de-vitamina-c-1.png,projetos/design-grafico/full/carrossel-de-vitamina-c-2.png,projetos/design-grafico/full/carrossel-de-vitamina-c-3.png,projetos/design-grafico/full/carrossel-de-vitamina-c-4.png,projetos/design-grafico/full/carrossel-de-vitamina-c-5.png" data-title="Pele Radiante: Vitamina C">
+              <img src="projetos/design-grafico/full/carrossel-de-vitamina-c-1.png" alt="Carrossel de Vitamina C"><span class="graphic-card-label">Pele Radiante: Vitamina C</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/natal-magico-1.png,projetos/design-grafico/full/natal-magico-2.png,projetos/design-grafico/full/natal-magico-3.png" data-title="Natal Mágico">
+              <img src="projetos/design-grafico/full/natal-magico-1.png" alt="Natal Mágico"><span class="graphic-card-label">Natal Mágico</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/seu-sorriso-merece-1.png,projetos/design-grafico/full/seu-sorriso-merece-2.png,projetos/design-grafico/full/seu-sorriso-merece-3.png" data-title="Seu Sorriso Merece">
+              <img src="projetos/design-grafico/full/seu-sorriso-merece-1.png" alt="Seu Sorriso Merece"><span class="graphic-card-label">Seu Sorriso Merece</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/marca-de-essencia-1.png,projetos/design-grafico/full/marca-de-essencia-2.png,projetos/design-grafico/full/marca-de-essencia-3.png" data-title="Marca de Essência">
+              <img src="projetos/design-grafico/full/marca-de-essencia-1.png" alt="Marca de Essência"><span class="graphic-card-label">Marca de Essência</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/cracha-para-evento-1.png,projetos/design-grafico/full/cracha-para-evento-2.png,projetos/design-grafico/full/cracha-para-evento-3.png,projetos/design-grafico/full/cracha-para-evento-4.png" data-title="Crachá para Evento">
+              <img src="projetos/design-grafico/full/cracha-para-evento-1.png" alt="Crachá para Evento"><span class="graphic-card-label">Crachá para Evento</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/social-media-santo-antonio-1.png,projetos/design-grafico/full/social-media-santo-antonio-2.png" data-title="Social Media: Santo Antônio">
+              <img src="projetos/design-grafico/full/social-media-santo-antonio-1.png" alt="Social Media: Santo Antônio"><span class="graphic-card-label">Social Media: Santo Antônio</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/projeto-chile-1.png,projetos/design-grafico/full/projeto-chile-2.png,projetos/design-grafico/full/projeto-chile-3.png,projetos/design-grafico/full/projeto-chile-4.png" data-title="Projeto Chile">
+              <img src="projetos/design-grafico/full/projeto-chile-1.png" alt="Projeto Chile"><span class="graphic-card-label">Projeto Chile</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/social-media-1.png,projetos/design-grafico/full/social-media-2.png,projetos/design-grafico/full/social-media-3.png,projetos/design-grafico/full/social-media-4.png,projetos/design-grafico/full/social-media-5.png,projetos/design-grafico/full/social-media-6.png" data-title="Estética e Beleza">
+              <img src="projetos/design-grafico/full/social-media-1.png" alt="Social Media: Estética e Beleza"><span class="graphic-card-label">Estética e Beleza</span>
+            </div>
+            <div class="graphic-card" data-gallery="projetos/design-grafico/full/ressaca-black-1.png,projetos/design-grafico/full/ressaca-black-2.png,projetos/design-grafico/full/ressaca-black-3.png,projetos/design-grafico/full/ressaca-black-4.png" data-title="Ressaca Black">
+              <img src="projetos/design-grafico/full/ressaca-black-1.png" alt="Ressaca Black"><span class="graphic-card-label">Ressaca Black</span>
+            </div>
+          </div>
+        </div>
+        <p class="marquee-hint"><i class="bi bi-info-circle"></i> clique numa peça pra ampliar</p>
+        <div class="pad-controls" role="group" aria-label="Controles da galeria">
+          <button class="pad-btn" id="graphic-prev" aria-label="Peça anterior"><i class="bi bi-skip-backward-fill"></i></button>
+          <button class="pad-btn pad-btn-main" id="graphic-play" aria-label="Pausar"><i class="bi bi-pause-fill"></i></button>
+          <button class="pad-btn" id="graphic-next" aria-label="Próxima peça"><i class="bi bi-skip-forward-fill"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE / CHARACTER SELECT -->
+  <section class="sobre" id="sobre">
+    <div class="wrap">
+      <h2 class="title"><span class="hash">#02</span> Ficha do <span>Personagem</span></h2>
+      <p class="section-sub">Clique no card pra virar.</p>
+
+      <div class="sobre-grid">
+        <button class="char-card" id="char-card" aria-label="Virar ficha de personagem">
+          <div class="char-card-inner">
+            <div class="char-card-front">
+              <div class="char-card-frame">
+                <img src="images/Gabu.png" alt="Gabrielle Rosa">
+              </div>
+              <div class="char-card-name">Gabrielle Rosa</div>
+              <div class="char-card-class">UX/UI Designer &amp; Designer Gráfica</div>
+              <div class="char-card-since">PROFISSIONAL DESDE 2020</div>
+              <div class="char-card-flip-hint"><i class="bi bi-arrow-repeat"></i> clique pra virar</div>
+            </div>
+            <div class="char-card-back">
+              <h4>Missão</h4>
+              <p>Simplificar a vida das pessoas e tornar a interação digital mais acessível e agradável.</p>
+              <h4>Origem</h4>
+              <p>Técnico em Comunicação Visual (2014) → mercado de trabalho desde 2020 → especialização em UX/UI pela UX Unicórnio.</p>
+              <div class="char-card-flip-hint"><i class="bi bi-arrow-repeat"></i> voltar</div>
+            </div>
+          </div>
+        </button>
+
+        <div class="sobre-text">
+          <p>Minha paixão por design nasceu em 2014, no curso Técnico em Comunicação Visual, onde mergulhei de cabeça no universo da criatividade. Foi com o tempo que descobri o UX/UI Design: uma área que une empatia, funcionalidade e estética para criar experiências digitais que realmente fazem diferença na vida das pessoas.</p>
+          <p>Sou formada em Design Gráfico e atuo profissionalmente na área desde 2020. Hoje aprofundo meus estudos em UX/UI pela UX Unicórnio, colocando esse conhecimento em prática em projetos, conduzindo pesquisas, propondo soluções e realizando testes de usabilidade. Também atuo como designer gráfica autônoma, criando identidades visuais e materiais promocionais para marcas que querem se comunicar com mais personalidade.</p>
+
+          <div class="social-row">
+            <a href="https://www.linkedin.com/in/gabriellenprosa/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.behance.net/gabriellerosa3" target="_blank" rel="noopener" class="social-btn" aria-label="Behance"><i class="bi bi-behance"></i></a>
+            <a href="https://github.com/Gaburiiere" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section class="habilidades" id="habilidades">
+    <div class="wrap">
+      <h2 class="title"><span class="hash">#03</span> Minhas <span>Habilidades</span></h2>
+      <p class="section-sub">O que eu sei fazer, direto ao ponto.</p>
+
+      <h3 class="sub-heading"><i class="bi bi-stars"></i> Especialidades</h3>
+      <div class="marquee" id="marquee">
+        <div class="marquee-track" id="marquee-track">
+          <div class="ability-chip">
+            <div class="ability-chip-icon"><i class="bi bi-compass"></i></div>
+            <div>
+              <h4>UX Strategy</h4>
+              <p>Pesquisa e visão de longo prazo pra planejar soluções.</p>
+            </div>
+          </div>
+          <div class="ability-chip">
+            <div class="ability-chip-icon"><i class="bi bi-kanban"></i></div>
+            <div>
+              <h4>Product Management</h4>
+              <p>Backlog, MVPs e roadmap orientados a resultado.</p>
+            </div>
+          </div>
+          <div class="ability-chip">
+            <div class="ability-chip-icon"><i class="bi bi-search"></i></div>
+            <div>
+              <h4>UX Research</h4>
+              <p>Validar ideias e achar oportunidades reais.</p>
+            </div>
+          </div>
+          <div class="ability-chip">
+            <div class="ability-chip-icon"><i class="bi bi-palette"></i></div>
+            <div>
+              <h4>UI Design</h4>
+              <p>Interfaces intuitivas e bonitas no Figma.</p>
+            </div>
+          </div>
+          <div class="ability-chip">
+            <div class="ability-chip-icon"><i class="bi bi-diagram-3"></i></div>
+            <div>
+              <h4>Prototipação</h4>
+              <p>Fluxos e protótipos que simulam o real.</p>
+            </div>
+          </div>
+          <div class="ability-chip">
+            <div class="ability-chip-icon"><i class="bi bi-pencil-square"></i></div>
+            <div>
+              <h4>UX Writing</h4>
+              <p>Textos claros que guiam quem usa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="marquee-hint"><i class="bi bi-info-circle"></i> passe o mouse pra pausar</p>
+
+      <div class="skills-cloud">
+        <div class="skills-cloud-group">
+          <h3 class="sub-heading"><i class="bi bi-heart-fill"></i> Soft Skills</h3>
+          <div class="chips">
+            <span class="chip"><i class="bi bi-emoji-smile"></i> Empatia</span>
+            <span class="chip"><i class="bi bi-chat-dots"></i> Comunicação Clara</span>
+            <span class="chip"><i class="bi bi-people"></i> Colaboração Multidisciplinar</span>
+            <span class="chip"><i class="bi bi-puzzle"></i> Pensamento Crítico</span>
+            <span class="chip"><i class="bi bi-lightbulb"></i> Criatividade e Inovação</span>
+            <span class="chip"><i class="bi bi-clock-history"></i> Gestão de Tempo</span>
+            <span class="chip"><i class="bi bi-arrow-repeat"></i> Resiliência e Adaptabilidade</span>
+            <span class="chip"><i class="bi bi-rocket-takeoff"></i> Proatividade</span>
+          </div>
+        </div>
+        <div class="skills-cloud-group">
+          <h3 class="sub-heading"><i class="bi bi-cpu-fill"></i> Hard Skills</h3>
+          <div class="chips">
+            <span class="chip"><i class="bi bi-brush"></i> Design Gráfico</span>
+            <span class="chip"><i class="bi bi-grid-3x3-gap"></i> Design System</span>
+            <span class="chip"><i class="bi bi-vector-pen"></i> Figma / Photoshop / Illustrator</span>
+            <span class="chip"><i class="bi bi-diagram-3"></i> Prototipação</span>
+            <span class="chip"><i class="bi bi-clipboard-data"></i> Pesquisa &amp; Testes de Usabilidade</span>
+            <span class="chip"><i class="bi bi-kanban"></i> Metodologias Ágeis (Scrum/Kanban)</span>
+            <span class="chip"><i class="bi bi-code-slash"></i> HTML / CSS / JS</span>
+            <span class="chip"><i class="bi bi-stars"></i> IA</span>
+            <span class="chip"><i class="bi bi-stars"></i> OpenAI (ChatGPT)</span>
+            <span class="chip"><i class="bi bi-stars"></i> Claude AI</span>
+            <span class="chip"><i class="bi bi-film"></i> Edição de Vídeo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONQUISTAS / ACHIEVEMENTS -->
+  <section class="conquistas" id="conquistas">
+    <div class="wrap">
+      <h2 class="title"><span class="hash">#04</span> Conquistas <span>Desbloqueadas</span></h2>
+      <p class="section-sub">Outras coisas que eu gosto, fora do design.</p>
+
+      <div class="achv-list">
+        <div class="achv">
+          <span class="achv-icon">🎮</span>
+          <div class="achv-body">
+            <h4>Jogos Digitais &amp; Tabuleiro</h4>
+            <p>Just Dance, League of Legends, o caos de Overcooked, The Sims pra relaxar e boas rodadas de Munchkin.</p>
+          </div>
+          <span class="achv-xp">+15 XP</span>
+        </div>
+        <div class="achv">
+          <span class="achv-icon">🎬</span>
+          <div class="achv-body">
+            <h4>Séries &amp; Filmes</h4>
+            <p>Amo uma boa história, seja drama, comédia ou animação, sempre buscando algo novo pra assistir.</p>
+          </div>
+          <span class="achv-xp">+10 XP</span>
+        </div>
+        <div class="achv">
+          <span class="achv-icon">⛸️</span>
+          <div class="achv-body">
+            <h4>Patins</h4>
+            <p>Uma das minhas maiores paixões. No tempo livre, é patins e pronto.</p>
+          </div>
+          <span class="achv-xp">+20 XP</span>
+        </div>
+        <div class="achv">
+          <span class="achv-icon">📸</span>
+          <div class="achv-body">
+            <h4>Fotografia</h4>
+            <p>Registrar momentos espontâneos: paisagens, amigos e rotina viram memórias pra sempre.</p>
+          </div>
+          <span class="achv-xp">+10 XP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO / TERMINAL -->
+  <section class="contato" id="contato">
+    <div class="wrap">
+      <h2 class="title"><span class="hash">#05</span> Abrir <span>Transmissão</span></h2>
+      <p class="section-sub">Bora trocar uma ideia sobre o próximo projeto?</p>
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">transmissao@gabrielle-rosa:~</span>
+        </div>
+        <form class="terminal-body" id="contact-form" action="https://formspree.io/f/xzepwggo" method="POST">
+          <p class="term-line">&gt; iniciando_novo_contato...</p>
+          <label class="term-field">
+            <span>&gt; nome:</span>
+            <input type="text" id="f-nome" name="nome" placeholder="seu_nome_completo" required>
+          </label>
+          <label class="term-field">
+            <span>&gt; email:</span>
+            <input type="email" id="f-email" name="email" placeholder="seu@email.com" required>
+          </label>
+          <label class="term-field">
+            <span>&gt; celular:</span>
+            <input type="tel" id="f-celular" name="celular" placeholder="opcional">
+          </label>
+          <label class="term-field term-field-area">
+            <span>&gt; mensagem:</span>
+            <textarea id="f-mensagem" name="mensagem" rows="4" placeholder="digite sua mensagem aqui..." required></textarea>
+          </label>
+          <input type="hidden" name="_subject" value="Novo contato via portfólio">
+          <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off">
+          <button type="submit" class="btn btn-primary" id="contact-submit"><i class="bi bi-send-fill"></i> enviar_sinal()</button>
+          <p class="term-status" id="term-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div class="footer-logo">
+      <img src="images/LOOOGO.png" alt="logo">
+      <span>Gabrielle Rosa</span>
+    </div>
+    <div class="social-row">
+      <a href="https://www.linkedin.com/in/gabriellenprosa/" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.behance.net/gabriellerosa3" target="_blank" rel="noopener" class="social-btn" aria-label="Behance"><i class="bi bi-behance"></i></a>
+      <a href="https://github.com/Gaburiiere" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p><i class="bi bi-envelope-fill"></i> <a href="mailto:gabriellenprosa@gmail.com">gabriellenprosa@gmail.com</a></p>
+    <p class="footer-credit">Desenvolvido por Gabrielle Rosa. Game Over? Não... Continue.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Imagem anterior"><i class="bi bi-chevron-left"></i></button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="">
+    <iframe id="lightbox-video" class="lightbox-video" src="" title="Vídeo do projeto" frameborder="0" allowfullscreen></iframe>
+    <div class="lightbox-caption">
+      <span id="lightbox-title"></span>
+      <span id="lightbox-counter"></span>
+    </div>
+  </div>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Próxima imagem"><i class="bi bi-chevron-right"></i></button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
