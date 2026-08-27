@@ -12,7 +12,7 @@
   gap: 16px; height: 70px;
 }
 .back-link {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px;
   font-family: var(--font-display); font-size: 13px; font-weight: 700;
   color: var(--text-dim);
   padding: 10px 16px; border-radius: 999px;
@@ -186,7 +186,7 @@
 .locked-level-pct .dots span:nth-child(3) { animation-delay: 0.4s; }
 
 .locked-level-checkpoint {
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px;
   font-size: 13px !important; color: var(--text-dim);
   border-top: 1px solid var(--border);
   padding-top: 18px;
