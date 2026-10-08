@@ -37,7 +37,7 @@
   background: #0f0e1c; border: 1px solid var(--border); border-radius: 999px;
   padding: 4px 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.lz-browser img { width: 100%; display: block; cursor: zoom-in; }
+.lz-browser img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top center; display: block; cursor: zoom-in; }
 
 /* ---------- ficha técnica ---------- */
 .lz-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-top: 26px; }

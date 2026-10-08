@@ -465,7 +465,12 @@
   document.querySelectorAll('.lz-shots img, .lz-phones img').forEach((img) => {
     img.addEventListener('click', () => { lbImg.src = img.src; lb.classList.add('open'); });
   });
-  document.querySelectorAll('.brand-sheet, .lz-journey').forEach((el) => el.classList.add('reveal'));
+  // blocos extras com animação de entrada: precisam do próprio observer (o do case.js já rodou)
+  const extra = document.querySelectorAll('.brand-sheet, .lz-journey');
+  const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+  }), { threshold: 0.05 });
+  extra.forEach((el) => { el.classList.add('reveal'); io.observe(el); });
 })();
 
 // ---------- site ao vivo: computador / celular ----------
