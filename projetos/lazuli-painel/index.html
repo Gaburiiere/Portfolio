@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lazúli Painel de Gestão | Case Study | Gabrielle Rosa</title>
+<meta name="description" content="Case de UX/UI do painel de gestão da Lazúli Confeitaria: pedidos, atendimento com IA, cardápio, CRM, marketing, tráfego pago, CMV e analytics num só lugar, conectado ao site.">
+<meta property="og:title" content="Lazúli — Painel de Gestão | Case de UX/UI">
+<meta property="og:image" content="img/visao-geral.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400..900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Allura&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../case.css">
+<link rel="stylesheet" href="../lazuli/lazuli-case.css">
+<link rel="stylesheet" href="painel-case.css">
+<link rel="icon" href="../../images/LOOOGO.png">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<header class="case-hud">
+  <div class="wrap case-hud-inner">
+    <a href="../../index.html#projetos" class="back-link"><i class="bi bi-arrow-left"></i> Voltar aos projetos</a>
+    <a href="../../index.html" class="case-brand">
+      <img src="../../images/LOOOGO.png" alt="logo">
+      <span>Gabrielle Rosa</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="case-hero">
+    <div class="wrap">
+      <p class="case-eyebrow">◆ MISSÃO EM ANDAMENTO ◆</p>
+      <h1>Lazúli · Painel de Gestão</h1>
+      <p class="case-hero-sub">Um SaaS de gestão para a Lazúli Confeitaria: pedidos, atendimento com IA no WhatsApp, cardápio, clientes, entregas, marketing, tráfego pago, custos e lucro, tudo num painel só. Ele também alimenta o site da confeitaria, então o que muda no painel aparece no site sozinho.</p>
+      <div class="case-meta">
+        <span class="tag">UX Design</span>
+        <span class="tag">UI Design</span>
+        <span class="tag">Design System</span>
+        <span class="tag">SaaS / Dashboard</span>
+        <span class="tag">Projeto para cliente</span>
+        <span class="status status-progress"><i class="bi bi-hourglass-split"></i> Em construção</span>
+      </div>
+      <p class="pn-private"><i class="bi bi-lock-fill"></i> O painel é de acesso restrito à equipe da Lazúli. Aqui ele é mostrado pelo Figma, com dados fictícios.</p>
+      <div class="lz-hero-links">
+        <a href="https://www.figma.com/proto/uS16W3o1n7Z93KmlEddd11/Laz%C3%BAli-%E2%80%94-Painel?node-id=5-351&amp;page-id=2%3A2&amp;starting-point-node-id=5%3A351&amp;scaling=scale-down-width&amp;content-scaling=fixed" target="_blank" rel="noopener" class="btn btn-primary"><i class="bi bi-play-circle"></i> Protótipo no Figma</a>
+        <a href="https://www.figma.com/design/uS16W3o1n7Z93KmlEddd11/Laz%C3%BAli-%E2%80%94-Painel" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-vector-pen"></i> Projeto no Figma</a>
+        <a href="../lazuli/index.html" class="btn btn-outline"><i class="bi bi-shop"></i> Case do site</a>
+      </div>
+      <div class="lz-browser case-cover">
+        <div class="lz-browser-bar"><span></span><span></span><span></span><div class="lz-url"><i class="bi bi-lock-fill"></i> painel da Lazúli · acesso restrito</div></div>
+        <img src="img/visao-geral.webp" alt="Visão geral do painel da Lazúli com indicadores, gráfico de faturamento e produtos mais vendidos">
+      </div>
+
+      <div class="lz-facts">
+        <div class="lz-fact"><small>MEU PAPEL</small><span>Produto, UX, UI e design system</span></div>
+        <div class="lz-fact"><small>CLIENTE</small><span>Lazúli Confeitaria Artesanal</span></div>
+        <div class="lz-fact"><small>ESCOPO</small><span>9 áreas, mais de 20 módulos</span></div>
+        <div class="lz-fact"><small>ENTREGAS</small><span>Design system, 60 telas e 2 protótipos</span></div>
+        <div class="lz-fact"><small>STATUS</small><span>Em uso, evoluindo por fases</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap case-body">
+
+    <!-- ================= 01 DOR ================= -->
+    <section class="case-section" id="dor">
+      <div class="case-section-head"><span class="case-num">#01</span><h2>A Dor e o Porquê</h2></div>
+      <p>Depois do site no ar, a Lazúli passou a receber pedidos por mais de um caminho: o site, o WhatsApp e o atendimento manual. Cada canal tinha suas próprias anotações, e várias perguntas importantes ficavam sem resposta rápida: <strong>quais pedidos ainda precisam ser confirmados? Quem já pagou? Quanto realmente sobra de lucro em cada bolo? Quem não compra há um tempo? Os anúncios estão trazendo pedido ou só cliques?</strong></p>
+      <p>Para uma confeitaria pequena, tempo é o recurso mais escasso. Quem confeita é a mesma pessoa que atende, cobra, organiza a entrega e posta no Instagram. A cliente pediu uma ferramenta que tirasse esse peso do celular e colocasse <strong>a operação inteira num lugar só</strong>.</p>
+      <div class="case-cards">
+        <div class="case-card">
+          <h3><i class="bi bi-diagram-3"></i> O problema</h3>
+          <p>Pedidos, conversas, pagamentos e clientes espalhados em canais diferentes, sem visão do todo e sem números confiáveis de custo e lucro.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-bullseye"></i> O objetivo</h3>
+          <p>Um painel central onde a administradora acompanha praticamente toda a operação, com o site e o WhatsApp alimentando tudo em tempo real.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-buildings"></i> A visão de futuro</h3>
+          <p>Arquitetura pronta para virar um SaaS multiempresa, que possa ser vendido para outros restaurantes, confeitarias e deliveries.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 02 ESCOPO ================= -->
+    <section class="case-section" id="escopo">
+      <div class="case-section-head"><span class="case-num">#02</span><h2>O que o Painel Administra</h2></div>
+      <p>O escopo é grande, então a primeira decisão de UX foi organizar. Agrupei as funções em áreas que seguem o caminho natural do negócio: <strong>vender, atender, produzir, entregar, fidelizar, crescer e medir</strong>. Cada área virou um item do menu lateral, com submenus só onde eles fazem sentido.</p>
+      <div class="pn-modules">
+        <div class="pn-module"><h3><i class="bi bi-bag-check"></i> Operação</h3><p>O dia a dia dos pedidos, do "novo" ao "entregue".</p><div class="pn-chips"><span>Visão geral</span><span>Pedidos</span><span>Entregas</span><span>Pagamentos</span></div></div>
+        <div class="pn-module"><h3><i class="bi bi-chat-dots"></i> Atendimento</h3><p>WhatsApp atendido por IA, com a equipe podendo assumir.</p><div class="pn-chips"><span>Conversas</span><span>IA de atendimento</span><span>WhatsApp</span></div></div>
+        <div class="pn-module"><h3><i class="bi bi-basket2"></i> Cardápio</h3><p>Fonte única do que aparece no site.</p><div class="pn-chips"><span>Produtos</span><span>Categorias</span><span>Adicionais</span><span>Combos</span></div></div>
+        <div class="pn-module"><h3><i class="bi bi-people"></i> Clientes e CRM</h3><p>Histórico, preferências e relacionamento de cada cliente.</p><div class="pn-chips"><span>Clientes</span><span>Perfil 360°</span><span>Recuperação</span><span>LGPD</span></div></div>
+        <div class="pn-module"><h3><i class="bi bi-megaphone"></i> Marketing</h3><p>Trazer o cliente de volta sem trabalho manual.</p><div class="pn-chips"><span>Campanhas</span><span>Automações</span><span>Cupons</span><span>Cashback</span><span>Fidelidade</span></div></div>
+        <div class="pn-module"><h3><i class="bi bi-graph-up-arrow"></i> Tráfego pago</h3><p>Meta Ads e Google Ads medidos por pedido real.</p><div class="pn-chips"><span>Campanhas</span><span>Aprovações</span><span>Regras de investimento</span></div></div>
+        <div class="pn-module"><h3><i class="bi bi-wallet2"></i> Financeiro</h3><p>Quanto entra, quanto custa e quanto sobra.</p><div class="pn-chips"><span>Pagamentos</span><span>CMV</span><span>Lucratividade</span></div></div>
+        <div class="pn-module"><h3><i class="bi bi-bar-chart-line"></i> Análise</h3><p>Números com fonte e alertas que viram ação.</p><div class="pn-chips"><span>Analytics</span><span>Inteligência</span><span>Insights</span></div></div>
+        <div class="pn-module"><h3><i class="bi bi-plug"></i> Integrações</h3><p>As conexões do painel com o mundo.</p><div class="pn-chips"><span>Site</span><span>WhatsApp</span><span>Pagamentos</span><span>IA</span><span>GA4 · Meta</span></div></div>
+      </div>
+    </section>
+
+    <!-- ================= 03 ARQUITETURA ================= -->
+    <section class="case-section" id="arquitetura">
+      <div class="case-section-head"><span class="case-num">#03</span><h2>Como Tudo se Conecta</h2></div>
+      <p>O painel é a <strong>fonte única de verdade</strong>. Tudo o que acontece no site (visitas, sacola, checkout e pedidos) chega no painel, e o que a administradora muda no painel (produto, preço, disponibilidade, horários, bairros, cupons) aparece no site automaticamente, sem mexer em código.</p>
+      <div class="pn-arch">
+        <div class="pn-stack">
+          <div class="pn-node"><i class="bi bi-shop"></i><div><b>Site da Lazúli</b><small>cardápio e pedidos</small></div></div>
+          <div class="pn-node"><i class="bi bi-whatsapp"></i><div><b>WhatsApp</b><small>atendido pela IA</small></div></div>
+          <div class="pn-node"><i class="bi bi-person-badge"></i><div><b>Atendimento manual</b><small>novo pedido no painel</small></div></div>
+        </div>
+        <div class="pn-link"><i class="bi bi-arrow-left-right"></i>pedidos, eventos<br>e cardápio</div>
+        <div class="pn-node core"><i class="bi bi-stars"></i><b>Painel Lazúli</b><small>pedidos · clientes · cardápio · regras de preço, taxa e cupom calculadas no servidor</small></div>
+        <div class="pn-link"><i class="bi bi-arrow-left-right"></i>webhooks<br>e APIs</div>
+        <div class="pn-stack">
+          <div class="pn-node"><i class="bi bi-credit-card"></i><div><b>Pagamentos</b><small>Pix via gateway</small></div></div>
+          <div class="pn-node"><i class="bi bi-badge-ad"></i><div><b>Meta e Google Ads</b><small>campanhas e custo</small></div></div>
+          <div class="pn-node"><i class="bi bi-graph-up"></i><div><b>GA4 e Meta Pixel</b><small>só com consentimento</small></div></div>
+        </div>
+      </div>
+      <div class="case-cards">
+        <div class="case-card">
+          <h3><i class="bi bi-shield-lock"></i> O site não decide preço</h3>
+          <p>O site envia só produto, opções, quantidade e dados do cliente. Preços, taxas de entrega, descontos e status são sempre calculados no servidor, o que evita fraude e erro.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-arrow-repeat"></i> Mudou aqui, mudou lá</h3>
+          <p>A ordem da lista de produtos é a ordem do cardápio no site. Produto indisponível aparece como "Indisponível"; arquivado some.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-buildings"></i> Pronto para multiempresa</h3>
+          <p>Os dados são separados por empresa, com controle de acesso por usuário, e cada site se identifica por um código de loja. É a base para vender o painel a outros negócios.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 04 UX ================= -->
+    <section class="case-section" id="ux">
+      <div class="case-section-head"><span class="case-num">#04</span><h2>Estratégia de UX</h2></div>
+      <p>Um painel com tantas funções corre o risco de virar uma planilha gigante. A diretriz que guiou o projeto foi: <strong>a tela precisa dizer o que fazer agora, não só mostrar números</strong>. E quem usa é dona de confeitaria, não analista de dados, então tudo tem que ser explicado em português simples.</p>
+
+      <div class="lz-journey">
+        <div class="lz-step"><i class="bi bi-bell"></i><h3>Chega o pedido</h3><p>Alerta com som e aviso no computador.</p></div>
+        <div class="lz-step"><i class="bi bi-check2-circle"></i><h3>Confirma</h3><p>Um toque no cartão leva à próxima etapa.</p></div>
+        <div class="lz-step"><i class="bi bi-fire"></i><h3>Produz</h3><p>Quadro mostra o que está em preparação.</p></div>
+        <div class="lz-step"><i class="bi bi-bicycle"></i><h3>Entrega</h3><p>Entregador atribuído, status atualiza sozinho.</p></div>
+        <div class="lz-step"><i class="bi bi-heart"></i><h3>Fideliza</h3><p>Cashback e pós-compra automáticos.</p></div>
+      </div>
+
+      <div class="lz-decisions">
+        <div class="lz-decision">
+          <h3><i class="bi bi-lightning-charge"></i> Visão geral começa pelo que é urgente</h3>
+          <p>Antes dos indicadores, quatro cartões de ação: <em>A confirmar</em>, <em>Em andamento</em>, <em>Aguardando pagamento</em> e <em>Hoje</em>. Logo abaixo, avisos como "1 pedido com valor a combinar aguardando preço".</p>
+          <p class="why"><b>POR QUÊ</b>A primeira pergunta do dia é "o que eu preciso resolver?", não "quanto faturei no mês?".</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-kanban"></i> Pedidos em quadro, como uma cozinha</h3>
+          <p>Colunas Novo → Confirmado → Em preparação → Pronto → Saiu para entrega → Entregue. Cada cartão tem um botão com a próxima etapa e outro para voltar. Pagamentos pendentes ficam destacados acima do quadro. Também existe a visão em lista.</p>
+          <p class="why"><b>POR QUÊ</b>Imita o fluxo físico da produção e reduz cada mudança de status a um clique.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-bell"></i> Alerta de novo pedido que não se perde</h3>
+          <p>Um aviso no canto da tela com número, cliente, valor, origem e situação do pagamento, com "Ver pedido" e "OK, vi". Dá pra ligar o som e o aviso do sistema operacional.</p>
+          <p class="why"><b>POR QUÊ</b>O painel fica aberto enquanto ela trabalha. O pedido novo precisa chamar atenção sem bloquear a tela.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-robot"></i> IA com limites claros</h3>
+          <p>A atendente virtual consulta cardápio, monta carrinho, calcula entrega, aplica cupom e cria pedido. Mas ela <strong>nunca inventa preço</strong>, não marca pagamento como pago e não pede dados de cartão. A equipe pode assumir qualquer conversa, e a IA pausa na hora.</p>
+          <p class="why"><b>POR QUÊ</b>Confiança: a IA interpreta o que o cliente pede; as regras de negócio ficam com o sistema.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-person-check"></i> Dinheiro só se move com aprovação</h3>
+          <p>No tráfego pago, qualquer mudança de anúncio vira uma solicitação que a administradora aprova. Existe um teto mensal de investimento, e aprovações que estouram o teto são bloqueadas. A Inteligência só lê dados.</p>
+          <p class="why"><b>POR QUÊ</b>Automação sem controle assusta quem é dono do caixa. O humano fica no comando.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-arrow-repeat"></i> Automações em linguagem de gatilho</h3>
+          <p>Cada automação lê como uma frase: <em>gatilho → condição → ação</em>, por exemplo "cliente sem comprar há 45 dias → cupom 10% → WhatsApp", com a mensagem visível e os resultados (enviadas, conversões, faturamento).</p>
+          <p class="why"><b>POR QUÊ</b>Quem não é de marketing entende na hora o que vai acontecer e quanto aquilo rendeu.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-shield-check"></i> Marketing que respeita o cliente</h3>
+          <p>Só recebe mensagem quem autorizou, quem responde "parar" sai da lista, e cada cliente recebe no máximo uma mensagem a cada 3 dias somando campanhas e automações. No perfil, dá pra exportar ou excluir os dados (LGPD).</p>
+          <p class="why"><b>POR QUÊ</b>Recuperar cliente sem virar spam, e dentro da lei.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-question-circle"></i> Todo número se explica</h3>
+          <p>Indicadores têm um "?" com a explicação, as tabelas têm uma nota de como o cálculo é feito ("Margem bruta = (preço − CMV) ÷ preço") e as respostas da Inteligência sempre mostram a <strong>fonte</strong> dos dados.</p>
+          <p class="why"><b>POR QUÊ</b>Número que ninguém entende não vira decisão.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-lightbulb"></i> Alertas que levam à ação</h3>
+          <p>Os insights automáticos são divididos em Atenção, Oportunidade, Boa notícia e Para saber, e cada um termina com um link direto: "Revisar no CMV", "Ver automações", "Abrir cardápio".</p>
+          <p class="why"><b>POR QUÊ</b>O painel aponta o problema e já leva até onde ele se resolve.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 05 DESIGN SYSTEM ================= -->
+    <section class="case-section" id="design-system">
+      <div class="case-section-head"><span class="case-num">#05</span><h2>Design System</h2></div>
+      <p>O painel nasceu da mesma marca do site: as mesmas fontes (Cormorant, Jost e Allura), o mesmo azul e os mesmos ornamentos de traço fino. Mas um site de vitrine e uma ferramenta de trabalho têm necessidades diferentes, então o sistema foi <strong>adaptado para o uso diário</strong>: mais contraste, uma escala de cores completa, cores de status e componentes pensados para densidade de informação.</p>
+
+      <!-- tom -->
+      <div class="brand-sheet gelo">
+        <span class="bs-label">Mesma marca, outro contexto</span>
+        <p class="bs-over">Bom dia,</p>
+        <p class="bs-title">Gabrielle</p>
+        <p class="bs-lead" style="max-width:62ch">No site, a letra manuscrita aparece em todo sobretítulo. No painel, ela fica só nos momentos de acolhimento: a saudação da visão geral, o "Que bom te ver" do login e o "Feito à mão" no rodapé do menu. No resto, a interface usa Jost, que é mais legível em números, tabelas e formulários.</p>
+      </div>
+
+      <!-- cores -->
+      <div class="brand-sheet">
+        <span class="bs-label">Escala da marca · 50 a 900</span>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-chip" style="background:#f0f6fc"></div><b>Marca/50</b><code>#F0F6FC</code><span>Hover e fundos</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#e1eef9"></div><b>Marca/100</b><code>#E1EEF9</code><span>Item ativo, botão tonal</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#c3ddf1"></div><b>Marca/200</b><code>#C3DDF1</code><span>Bordas de destaque</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#9fc7e8"></div><b>Marca/300</b><code>#9FC7E8</code><span>Hover de borda</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#78b0db"></div><b>Marca/400</b><code>#78B0DB</code><span>Azul Lazúli, ornamentos</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#4f91c7"></div><b>Marca/500</b><code>#4F91C7</code><span>Gráficos</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#3778ae"></div><b>Marca/600</b><code>#3778AE</code><span>Ação: botões principais</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#2f6fa6"></div><b>Marca/700</b><code>#2F6FA6</code><span>Hover da ação</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#284f74"></div><b>Marca/800</b><code>#284F74</code><span>Ênfase</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#22405f"></div><b>Marca/900</b><code>#22405F</code><span>Azul profundo: títulos</span></div>
+        </div>
+        <span class="bs-label" style="margin-top:30px">Texto e superfícies</span>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-chip" style="background:#22405f"></div><b>Texto/Título</b><code>#22405F</code><span>Títulos e números</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#4a6076"></div><b>Texto/Corpo</b><code>#4A6076</code><span>Parágrafos</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#5d7186"></div><b>Texto/Secundário</b><code>#5D7186</code><span>Legendas</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#f6f9fc"></div><b>Fundo gelo</b><code>#F6F9FC</code><span>Fundo da aplicação</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#ffffff"></div><b>Branco</b><code>#FFFFFF</code><span>Cartões</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#d5e5f2"></div><b>Linha/Padrão</b><code>#D5E5F2</code><span>Bordas</span></div>
+        </div>
+        <span class="bs-label" style="margin-top:30px">Cores de status · cada uma com fundo 50, cor 600 e texto 700</span>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-chip" style="background:linear-gradient(90deg,#e8f5ee 50%,#1d7a4b 50%)"></div><b>Sucesso</b><code>#E8F5EE · #1D7A4B</code><span>Pago, pronto, alta</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:linear-gradient(90deg,#fdf4e1 50%,#95600a 50%)"></div><b>Atenção</b><code>#FDF4E1 · #95600A</code><span>Aguardando, abaixo da meta</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:linear-gradient(90deg,#fdeceb 50%,#b42318 50%)"></div><b>Perigo</b><code>#FDECEB · #B42318</code><span>Cancelar, atrasado, queda</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:linear-gradient(90deg,#ebf2fc 50%,#2b5f9e 50%)"></div><b>Info</b><code>#EBF2FC · #2B5F9E</code><span>Dicas e explicações</span></div>
+        </div>
+        <p class="bs-lead" style="margin-top:22px;max-width:74ch"><b style="font-weight:500;color:var(--lz-profundo)">Por que o botão não usa o azul do site:</b> texto branco sobre o Azul Lazúli (#78B0DB) tem contraste de só 2,3:1, abaixo do mínimo de acessibilidade. No painel, onde o botão é usado o dia inteiro, a ação passou para o Marca/600 (#3778AE), com 4,7:1. Ele passa no WCAG AA e continua sendo o mesmo azul da marca.</p>
+        <div class="pn-contrast">
+          <div style="background:#78b0db;color:#fff"><b>Confirmar pedido</b><small>#78B0DB · 2,3:1 · reprovado</small></div>
+          <div style="background:#3778ae;color:#fff"><b>Confirmar pedido</b><small>#3778AE · 4,7:1 · AA</small></div>
+          <div style="background:#e8f5ee;color:#17633c"><b>Pago</b><small>Sucesso 700 sobre 50 · 6,5:1</small></div>
+          <div style="background:#fdf4e1;color:#7a4e06"><b>Aguardando</b><small>Atenção 700 sobre 50 · 6,6:1</small></div>
+        </div>
+      </div>
+
+      <!-- tipografia -->
+      <div class="brand-sheet gelo">
+        <span class="bs-label">Estilos de texto</span>
+        <div class="type-scale" style="margin-top:0">
+          <div class="type-row"><small>Título/Página · Cormorant</small><span class="s" style="font-family:var(--lz-serif);font-weight:500;font-size:clamp(30px,4vw,38px);line-height:1.1">Pedidos</span></div>
+          <div class="type-row"><small>Título/Seção · Cormorant</small><span class="s" style="font-family:var(--lz-serif);font-weight:500;font-size:24px">Faturamento por dia</span></div>
+          <div class="type-row"><small>Título/Card · Cormorant</small><span class="s" style="font-family:var(--lz-serif);font-weight:500;font-size:20px">Origem dos pedidos</span></div>
+          <div class="type-row"><small>Script/Saudação · Allura</small><span class="s" style="font-family:var(--lz-script);font-size:30px;color:var(--lz-azul);line-height:1">Boa tarde,</span></div>
+          <div class="type-row"><small>Número/KPI · Jost 500</small><span class="s" style="font-family:var(--lz-sans);font-weight:500;font-size:28px">R$ 24.848,75</span></div>
+          <div class="type-row"><small>Texto/Corpo · Jost</small><span class="s" style="font-family:var(--lz-sans);font-size:15px;color:var(--pn-corpo)">Central operacional em tempo real.</span></div>
+          <div class="type-row"><small>Texto/Rótulo · Jost 500</small><span class="s" style="font-family:var(--lz-sans);font-weight:500;font-size:13px">Nome do produto</span></div>
+          <div class="type-row"><small>Texto/Legenda · Jost caixa alta</small><span class="s" style="font-family:var(--lz-sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase">Confeitaria Artesanal</span></div>
+          <div class="type-row"><small>Botão/Médio · Jost 500</small><span class="s" style="font-family:var(--lz-sans);font-weight:500;font-size:15px">Confirmar pedido</span></div>
+        </div>
+        <p class="bs-lead" style="margin-top:18px;max-width:72ch">Diferente do site, o botão do painel não usa caixa alta espaçada. Em uma ferramenta com dezenas de ações por tela, o texto normal é lido mais rápido e ocupa menos espaço.</p>
+      </div>
+
+      <!-- componentes -->
+      <div class="brand-sheet">
+        <span class="bs-label">Componentes (interativos, pode testar)</span>
+        <div class="comp-grid">
+          <div class="comp">
+            <small>Botão · 5 tipos por hierarquia</small>
+            <div class="row">
+              <button class="pn-btn primario" type="button"><i class="bi bi-check2"></i> Confirmar pedido</button>
+              <button class="pn-btn secundario" type="button">Registrar pagamento</button>
+            </div>
+            <div class="row">
+              <button class="pn-btn texto" type="button"><i class="bi bi-arrow-counterclockwise"></i> Voltar etapa</button>
+              <button class="pn-btn tonal" type="button">Usar no pedido</button>
+              <button class="pn-btn perigo" type="button">Cancelar pedido</button>
+            </div>
+          </div>
+          <div class="comp">
+            <small>Etiqueta de status · cor + ponto + texto</small>
+            <div class="row">
+              <span class="pn-status novo">Novo</span>
+              <span class="pn-status conf">Confirmado</span>
+              <span class="pn-status prep">Em preparação</span>
+              <span class="pn-status ok">Pago</span>
+              <span class="pn-status prep">Aguardando</span>
+              <span class="pn-status cancel">Cancelado</span>
+            </div>
+            <small>O status nunca depende só da cor: sempre tem texto, para quem não distingue cores.</small>
+          </div>
+          <div class="comp">
+            <small>Cartão de pedido (quadro)</small>
+            <div class="pn-card" id="demoCard">
+              <div class="top">#1318 <small>04:07</small></div>
+              <p>Gabriela Teixeira</p>
+              <p>2× Bolo de festa · 25 cm</p>
+              <div class="val">R$ 327,50 <span class="pn-status prep" id="demoStatus">Confirmado</span></div>
+              <button class="pn-btn tonal next" type="button" id="demoNext">Em preparação <i class="bi bi-arrow-right"></i></button>
+            </div>
+            <small>Clique no botão para avançar o pedido pelas etapas.</small>
+          </div>
+          <div class="comp">
+            <small>Card de indicador · menu lateral · campo</small>
+            <div class="pn-kpi"><small>Faturamento</small><b>R$ 24.848,75</b><span>↗ +6% vs. período anterior</span></div>
+            <div class="pn-menu">
+              <a href="#design-system" onclick="return false"><i class="bi bi-grid"></i> Visão geral</a>
+              <a href="#design-system" class="on" onclick="return false"><i class="bi bi-bag"></i> Pedidos</a>
+            </div>
+            <input class="pn-input" placeholder="voce@exemplo.com" aria-label="Campo de exemplo">
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:30px">No Figma, o design system está documentado em cinco quadros: <strong>Capa</strong>, <strong>Cores</strong>, <strong>Tipografia</strong>, <strong>Componentes</strong> (com os estados padrão, hover e foco ligados no protótipo) e <strong>Ícones</strong>, todos de traço fino, na mesma família do site.</p>
+      <div class="case-gallery">
+        <img src="img/ds-cores.webp" alt="Quadro de cores do design system no Figma" loading="lazy">
+        <img src="img/ds-tipografia.webp" alt="Quadro de tipografia do design system no Figma" loading="lazy">
+        <img src="img/ds-componentes.webp" alt="Quadro de componentes do design system no Figma" loading="lazy">
+        <img src="img/ds-capa.webp" alt="Capa do arquivo do painel no Figma" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ================= 06 UI ================= -->
+    <section class="case-section" id="telas">
+      <div class="case-section-head"><span class="case-num">#06</span><h2>As Telas</h2></div>
+      <p>Toda tela segue a mesma estrutura: menu lateral à esquerda, título em Cormorant com uma linha explicando para que a tela serve, filtros em pílulas e o conteúdo em cartões brancos sobre o fundo gelo. O rodapé do menu leva o "Feito à mão" da marca, para lembrar de quem é o negócio.</p>
+
+      <h3 class="sub-heading" style="margin-top:30px"><i class="bi bi-bag-check"></i> Operação</h3>
+      <div class="lz-shots">
+        <figure><img src="img/pedidos.webp" alt="Quadro de pedidos com colunas por status" loading="lazy"><figcaption><b>Pedidos.</b> Quadro por etapa, pagamentos pendentes no topo e atualização automática.</figcaption></figure>
+        <figure><img src="img/pedido-detalhe.webp" alt="Detalhe de um pedido com ações, itens, cliente e histórico" loading="lazy"><figcaption><b>Detalhe do pedido.</b> Próxima ação em destaque, cashback disponível, transações e histórico de quem fez o quê.</figcaption></figure>
+        <figure><img src="img/entregas.webp" alt="Painel de entregas" loading="lazy"><figcaption><b>Entregas.</b> Pedidos prontos entram sozinhos; o entregador é atribuído no cartão.</figcaption></figure>
+        <figure><img src="img/login.webp" alt="Tela de login do painel" loading="lazy"><figcaption><b>Login.</b> O mesmo tom acolhedor do site: "Cada pedido, com todo o cuidado."</figcaption></figure>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:40px"><i class="bi bi-chat-dots"></i> Atendimento, cardápio e clientes</h3>
+      <div class="lz-shots">
+        <figure><img src="img/atendimento-ia.webp" alt="Configuração da IA de atendimento" loading="lazy"><figcaption><b>IA de atendimento.</b> O que ela pode fazer, regras de segurança e quando passar para um humano.</figcaption></figure>
+        <figure><img src="img/atendimento.webp" alt="Lista de conversas do WhatsApp" loading="lazy"><figcaption><b>Conversas.</b> Filtros por quem está atendendo: humano, IA ou aguardando cliente.</figcaption></figure>
+        <figure><img src="img/cardapio.webp" alt="Lista de produtos do cardápio" loading="lazy"><figcaption><b>Produtos.</b> "O que você cadastrar aqui aparece no site automaticamente." Ordem, destaque e disponibilidade.</figcaption></figure>
+        <figure><img src="img/cliente-perfil.webp" alt="Perfil completo de um cliente" loading="lazy"><figcaption><b>Perfil do cliente.</b> Pedidos, favoritos, endereços, fidelidade, conversas, campanhas recebidas e LGPD.</figcaption></figure>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:40px"><i class="bi bi-megaphone"></i> Marketing e tráfego pago</h3>
+      <div class="lz-shots">
+        <figure><img src="img/automacoes.webp" alt="Automações de marketing" loading="lazy"><figcaption><b>Automações.</b> Gatilho → condição → ação, com a mensagem e o resultado de cada uma.</figcaption></figure>
+        <figure><img src="img/fidelidade.webp" alt="Programa de fidelidade e cashback" loading="lazy"><figcaption><b>Fidelidade e cashback.</b> Regras editáveis com um exemplo calculado ao lado.</figcaption></figure>
+        <figure><img src="img/trafego-pago.webp" alt="Painel de tráfego pago" loading="lazy"><figcaption><b>Tráfego pago.</b> Investimento x receita real dos pedidos, ROAS por campanha e teto mensal.</figcaption></figure>
+        <figure><img src="img/visao-geral.webp" alt="Visão geral do painel" loading="lazy"><figcaption><b>Visão geral.</b> Urgências no topo, depois indicadores, gráficos e produtos.</figcaption></figure>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:40px"><i class="bi bi-wallet2"></i> Gestão e inteligência</h3>
+      <div class="lz-shots">
+        <figure><img src="img/cmv.webp" alt="CMV e margem por produto" loading="lazy"><figcaption><b>CMV.</b> Custo, margem e lucro por variação, com alerta do que está abaixo da meta.</figcaption></figure>
+        <figure><img src="img/inteligencia.webp" alt="Inteligência com perguntas e insights" loading="lazy"><figcaption><b>Inteligência.</b> Perguntas em português com resposta e fonte, mais insights automáticos.</figcaption></figure>
+        <figure><img src="img/integracoes.webp" alt="Tela de integrações" loading="lazy"><figcaption><b>Integrações.</b> Site, WhatsApp, pagamentos, IA, anúncios e banco, cada um com seu status.</figcaption></figure>
+        <figure><img src="img/alerta.webp" alt="Alerta de novo pedido" loading="lazy" class="pn-contain"><figcaption><b>Alerta de novo pedido.</b> Aparece em qualquer tela, com som opcional.</figcaption></figure>
+      </div>
+
+      <p style="margin-top:40px">Todas as telas têm versão para celular, para a dona da confeitaria acompanhar a operação de qualquer lugar. O menu lateral vira uma gaveta, as tabelas viram listas de cartões e os quadros rolam na horizontal.</p>
+      <div class="lz-phones">
+        <figure><img src="img/m-login.webp" alt="Login no celular" loading="lazy"><figcaption><b>Login</b></figcaption></figure>
+        <figure><img src="img/m-menu.webp" alt="Menu aberto no celular" loading="lazy"><figcaption><b>Menu em gaveta</b></figcaption></figure>
+        <figure><img src="img/m-entregas.webp" alt="Entregas no celular" loading="lazy"><figcaption><b>Entregas</b></figcaption></figure>
+        <figure><img src="img/m-alerta.webp" alt="Alerta de novo pedido no celular" loading="lazy"><figcaption><b>Alerta de pedido</b></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ================= 07 FIGMA ================= -->
+    <section class="case-section" id="figma">
+      <div class="case-section-head"><span class="case-num">#07</span><h2>Projeto e Protótipo no Figma</h2></div>
+      <p>Como o painel em si é restrito, o projeto completo está aberto no Figma. Os protótipos de computador e de celular começam no login e permitem navegar por todas as áreas, abrir pedidos, ver o alerta de novo pedido e as notificações.</p>
+
+      <div class="lz-figma-structure">
+        <div class="case-card"><h3><i class="bi bi-palette"></i> Design System</h3><p>5 quadros</p><ul><li>Capa, cores e tipografia</li><li>Componentes com estados</li><li>Ícones</li></ul></div>
+        <div class="case-card"><h3><i class="bi bi-display"></i> Desktop</h3><p>30 frames em 1440px</p><ul><li>27 telas do painel</li><li>Notificações e alerta de pedido</li><li>Primeiro acesso</li></ul></div>
+        <div class="case-card"><h3><i class="bi bi-phone"></i> Mobile</h3><p>30 frames em 390px</p><ul><li>27 telas do painel</li><li>Menu em gaveta e alerta</li><li>Primeiro acesso</li></ul></div>
+      </div>
+
+      <div class="lz-figma-tabs" role="tablist" aria-label="Visualização do Figma">
+        <button class="lz-toggle" type="button" role="tab" data-figma="proto-desktop" aria-pressed="true"><i class="bi bi-play-circle"></i> Protótipo · computador</button>
+        <button class="lz-toggle" type="button" role="tab" data-figma="proto-mobile" aria-pressed="false"><i class="bi bi-phone"></i> Protótipo · celular</button>
+        <button class="lz-toggle" type="button" role="tab" data-figma="file" aria-pressed="false"><i class="bi bi-vector-pen"></i> Arquivo de design</button>
+      </div>
+      <div class="lz-figma-frame" id="figmaFrame">
+        <div class="lz-figma-ph" id="figmaPh">
+          <i class="bi bi-vector-pen"></i>
+          <p>O protótipo do Figma é carregado aqui. Ele é pesado, então só abre quando você pedir.</p>
+          <button class="btn btn-primary" type="button" id="figmaLoad"><i class="bi bi-play-fill"></i> Carregar protótipo</button>
+        </div>
+      </div>
+      <div class="case-links">
+        <a href="https://www.figma.com/design/uS16W3o1n7Z93KmlEddd11/Laz%C3%BAli-%E2%80%94-Painel" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-vector-pen"></i> Abrir arquivo no Figma</a>
+        <a href="https://www.figma.com/proto/uS16W3o1n7Z93KmlEddd11/Laz%C3%BAli-%E2%80%94-Painel?node-id=5-351&amp;page-id=2%3A2&amp;starting-point-node-id=5%3A351&amp;scaling=scale-down-width&amp;content-scaling=fixed" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-display"></i> Protótipo computador</a>
+        <a href="https://www.figma.com/proto/uS16W3o1n7Z93KmlEddd11/Laz%C3%BAli-%E2%80%94-Painel?node-id=6-10325&amp;page-id=2%3A3&amp;starting-point-node-id=6%3A10325&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-phone"></i> Protótipo celular</a>
+      </div>
+    </section>
+
+    <!-- ================= 08 TÉCNICA ================= -->
+    <section class="case-section" id="tecnica">
+      <div class="case-section-head"><span class="case-num">#08</span><h2>A Parte Técnica</h2></div>
+      <p>Além das telas, desenhei como o painel conversa com o resto do sistema. Algumas decisões técnicas aparecem na própria interface, porque a administradora precisa entendê-las e configurá-las sozinha.</p>
+      <pre class="lz-code"><span class="c">// O site só lê e envia, quem calcula é o painel</span>
+<span class="k">GET</span>  <span class="v">/api/public/loja/catalog</span>   <span class="c">// cardápio, opções e disponibilidade</span>
+<span class="k">GET</span>  <span class="v">/api/public/loja/config</span>    <span class="c">// horários, bairros, taxas, regras</span>
+<span class="k">POST</span> <span class="v">/api/public/loja/events</span>    <span class="c">// visitas, sacola, checkout</span>
+<span class="k">POST</span> <span class="v">/api/public/loja/orders</span>    <span class="c">// pedido: preço e taxa recalculados no servidor</span>
+
+<span class="k">POST</span> <span class="v">/api/webhooks/payments</span>     <span class="c">// confirmação do Pix, com assinatura</span>
+<span class="k">POST</span> <span class="v">/api/webhooks/whatsapp</span>     <span class="c">// mensagens para a IA</span>
+<span class="k">GET</span>  <span class="v">/api/cron/marketing</span>        <span class="c">// automações a cada 15 min</span></pre>
+      <div class="case-cards">
+        <div class="case-card">
+          <h3><i class="bi bi-key"></i> Segurança</h3>
+          <p>Credenciais de WhatsApp, pagamento e anúncios ficam só no servidor. Webhooks de pagamento são assinados e os inválidos são bloqueados. O painel só aceita chamadas das origens autorizadas (CORS).</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-cookie"></i> Medição com consentimento</h3>
+          <p>GA4 e Meta Pixel só carregam depois que o visitante aceita os cookies. Compras são enviadas pelo servidor, e telefone e e-mail vão com hash SHA-256.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-toggles"></i> Modo demonstração</h3>
+          <p>Pagamentos, WhatsApp e anúncios funcionam com adaptadores simulados, claramente sinalizados na interface, para testar o fluxo inteiro sem cobrar ninguém nem gastar com anúncio.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-calculator"></i> Regras de negócio</h3>
+          <p>Cashback e pontos só são gerados quando o pedido é entregue e pago; cancelamentos estornam o crédito. O CMV vem das fichas técnicas e do preço atual dos insumos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 09 PRÓXIMOS PASSOS ================= -->
+    <section class="case-section" id="proximos">
+      <div class="case-section-head"><span class="case-num">#09</span><h2>Status e Próximos Passos</h2></div>
+      <p>O painel está sendo colocado em uso por fases, junto com a cliente. Este case vai ser atualizado conforme o projeto avança.</p>
+      <ul class="lz-roadmap">
+        <li class="done"><i class="bi bi-check-circle-fill"></i><span><b>Design system e 60 telas no Figma</b> · desktop, mobile e protótipos navegáveis</span></li>
+        <li class="done"><i class="bi bi-check-circle-fill"></i><span><b>Painel ligado ao site</b> · cardápio e pedidos saindo da mesma fonte</span></li>
+        <li class="doing"><i class="bi bi-hourglass-split"></i><span><b>Integrações reais</b> · trocar os adaptadores simulados por gateway de pagamento, WhatsApp oficial e contas de anúncio</span></li>
+        <li class="next"><i class="bi bi-circle"></i><span><b>Teste de usabilidade com a equipe</b> · observar o uso em dias de movimento e ajustar o fluxo de pedidos</span></li>
+        <li class="next"><i class="bi bi-circle"></i><span><b>SaaS multiempresa</b> · cadastro de novas lojas, planos e personalização de marca para outros restaurantes, confeitarias e deliveries</span></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="wrap case-footer-nav">
+    <a href="../lazuli/index.html" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Missão anterior: Lazúli Site</a>
+    <a href="../../index.html#contato" class="btn btn-primary">Ir para contato <i class="bi bi-arrow-right"></i></a>
+  </div>
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="../../case.js"></script>
+<script>
+// ---------- lightbox para as galerias deste case ----------
+(() => {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.lz-shots img, .lz-phones img').forEach((img) => {
+    img.addEventListener('click', () => { lbImg.src = img.src; lb.classList.add('open'); });
+  });
+  // blocos extras com animação de entrada: precisam do próprio observer (o do case.js já rodou)
+  const extra = document.querySelectorAll('.brand-sheet, .lz-journey, .pn-arch, .pn-modules');
+  const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+  }), { threshold: 0.05 });
+  extra.forEach((el) => { el.classList.add('reveal'); io.observe(el); });
+})();
+
+// ---------- cartão de pedido interativo ----------
+(() => {
+  const etapas = [
+    ['Confirmado', 'conf', 'Em preparação'],
+    ['Em preparação', 'prep', 'Pronto'],
+    ['Pronto', 'ok', 'Saiu para entrega'],
+    ['Saiu para entrega', 'conf', 'Entregue'],
+    ['Entregue', 'ok', 'Recomeçar'],
+  ];
+  let i = 0;
+  const st = document.getElementById('demoStatus');
+  const btn = document.getElementById('demoNext');
+  const pinta = () => {
+    st.textContent = etapas[i][0];
+    st.className = 'pn-status ' + etapas[i][1];
+    btn.innerHTML = etapas[i][2] + ' <i class="bi bi-arrow-right"></i>';
+  };
+  pinta();
+  btn.addEventListener('click', () => { i = (i + 1) % etapas.length; pinta(); });
+})();
+
+// ---------- Figma embed (carrega só quando pedido) ----------
+(() => {
+  const BASE = 'https://www.figma.com';
+  const FILE = 'uS16W3o1n7Z93KmlEddd11/Laz%C3%BAli-%E2%80%94-Painel';
+  const urls = {
+    'proto-desktop': `${BASE}/proto/${FILE}?node-id=5-351&page-id=2%3A2&starting-point-node-id=5%3A351&scaling=scale-down-width&content-scaling=fixed&hide-ui=1`,
+    'proto-mobile': `${BASE}/proto/${FILE}?node-id=6-10325&page-id=2%3A3&starting-point-node-id=6%3A10325&scaling=scale-down&content-scaling=fixed&hide-ui=1`,
+    'file': `${BASE}/design/${FILE}?node-id=0-1`,
+  };
+  const labels = { 'proto-desktop': 'Carregar protótipo', 'proto-mobile': 'Carregar protótipo', 'file': 'Carregar arquivo' };
+  const frame = document.getElementById('figmaFrame');
+  const ph = document.getElementById('figmaPh');
+  const loadBtn = document.getElementById('figmaLoad');
+  const tabs = document.querySelectorAll('[data-figma]');
+  let current = 'proto-desktop';
+  let loaded = false;
+  function mount() {
+    const old = frame.querySelector('iframe'); if (old) old.remove();
+    const ifr = document.createElement('iframe');
+    ifr.src = BASE + '/embed?embed_host=share&url=' + encodeURIComponent(urls[current]);
+    ifr.title = 'Figma: Lazúli Painel';
+    ifr.allowFullscreen = true;
+    frame.appendChild(ifr);
+    ph.hidden = true;
+    loaded = true;
+  }
+  loadBtn.addEventListener('click', mount);
+  tabs.forEach((t) => t.addEventListener('click', () => {
+    current = t.dataset.figma;
+    tabs.forEach((x) => x.setAttribute('aria-pressed', String(x === t)));
+    loadBtn.innerHTML = '<i class="bi bi-play-fill"></i> ' + labels[current];
+    if (loaded) mount();
+  }));
+})();
+</script>
+</body>
+</html>
