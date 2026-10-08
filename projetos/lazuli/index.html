@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lazúli Confeitaria | Case Study | Gabrielle Rosa</title>
+<meta name="description" content="Case de UX/UI da Lazúli Confeitaria Artesanal: estratégia de UX, design system, do Figma ao site no ar, com pedidos finalizados pelo WhatsApp.">
+<meta property="og:title" content="Lazúli Confeitaria Artesanal | Case de UX/UI">
+<meta property="og:image" content="img/site-hero.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400..900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Allura&family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../case.css">
+<link rel="stylesheet" href="lazuli-case.css">
+<link rel="icon" href="../../images/LOOOGO.png">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<!-- ornamentos da marca Lazúli (reutilizados nas folhas de marca) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="lz-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C12.7 7 17 11.3 24 12 17 12.7 12.7 17 12 24 11.3 17 7 12.7 0 12 7 11.3 11.3 7 12 0Z"/></symbol>
+  <symbol id="lz-branch" viewBox="0 0 140 70"><g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M4 62C46 60 92 44 134 8"/><path d="M38 56c2-9 8-14 16-15"/><path d="M66 48c0-9 5-16 13-19"/><path d="M92 36c-1-8 3-15 10-19"/><path d="M112 22c-1-6 1-11 6-15"/></g><g fill="currentColor" opacity=".75"><path d="M54 41c-6 1-10 5-11 10 6-1 10-5 11-10z"/><path d="M79 29c-6 2-9 7-9 12 5-2 9-6 9-12z"/><path d="M102 17c-5 2-8 7-8 12 5-2 8-7 8-12z"/><path d="M118 7c-4 1-6 5-6 9 4-1 6-5 6-9z"/><path d="M24 60c4-6 10-8 15-6-4 5-10 7-15 6z"/><path d="M58 52c5-5 11-6 16-3-5 4-11 5-16 3z"/></g><g fill="currentColor"><circle cx="128" cy="26" r="1.8"/><circle cx="86" cy="22" r="1.5"/><circle cx="44" cy="40" r="1.4"/></g></symbol>
+  <symbol id="lz-filete" viewBox="0 0 200 20"><g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M8 9c22-6 48 4 70 0 6-1 9 2 8 5-1 2-4 2-5 0"/><path d="M192 9c-22-6-48 4-70 0-6-1-9 2-8 5 1 2 4 2 5 0"/></g><path fill="currentColor" d="M100 2c.5 5 3 7.5 8 8-5 .5-7.5 3-8 8-.5-5-3-7.5-8-8 5-.5 7.5-3 8-8z"/><circle cx="72" cy="14" r="1.3" fill="currentColor"/><circle cx="128" cy="14" r="1.3" fill="currentColor"/></symbol>
+</svg>
+
+<header class="case-hud">
+  <div class="wrap case-hud-inner">
+    <a href="../../index.html#projetos" class="back-link"><i class="bi bi-arrow-left"></i> Voltar aos projetos</a>
+    <a href="../../index.html" class="case-brand">
+      <img src="../../images/LOOOGO.png" alt="logo">
+      <span>Gabrielle Rosa</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="case-hero">
+    <div class="wrap">
+      <p class="case-eyebrow">◆ MISSÃO EM ANDAMENTO ◆</p>
+      <h1>Lazúli Confeitaria</h1>
+      <p class="case-hero-sub">Site de vitrine e pedidos para uma confeitaria artesanal. Desenhei a experiência, criei o design system a partir da identidade da marca, prototipei no Figma e levei o projeto até o site no ar, com o pedido montado no site e finalizado pelo WhatsApp.</p>
+      <div class="case-meta">
+        <span class="tag">UX Design</span>
+        <span class="tag">UI Design</span>
+        <span class="tag">Design System</span>
+        <span class="tag">Figma → Código</span>
+        <span class="tag">Projeto para cliente</span>
+        <span class="status status-progress"><i class="bi bi-hourglass-split"></i> Em construção</span>
+      </div>
+      <div class="lz-hero-links">
+        <a href="https://gaburiiere.github.io/lazuli/" target="_blank" rel="noopener" class="btn btn-primary"><i class="bi bi-globe2"></i> Ver site no ar</a>
+        <a href="https://www.figma.com/design/VjtxKe4Nml2oIpnmpECodk/Lazuli" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-vector-pen"></i> Projeto no Figma</a>
+        <a href="https://www.figma.com/proto/VjtxKe4Nml2oIpnmpECodk/Lazuli?node-id=4-1362&amp;page-id=1%3A3&amp;starting-point-node-id=4%3A1362&amp;scaling=scale-down-width&amp;content-scaling=fixed" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-play-circle"></i> Protótipo no Figma</a>
+      </div>
+      <div class="lz-browser case-cover">
+        <div class="lz-browser-bar"><span></span><span></span><span></span><div class="lz-url">gaburiiere.github.io/lazuli</div></div>
+        <img src="img/site-hero.webp" alt="Página inicial do site da Lazúli Confeitaria Artesanal" width="1440" height="900">
+      </div>
+
+      <div class="lz-facts">
+        <div class="lz-fact"><small>MEU PAPEL</small><span>UX, UI, design system e implementação</span></div>
+        <div class="lz-fact"><small>CLIENTE</small><span>Lazúli Confeitaria Artesanal (RJ)</span></div>
+        <div class="lz-fact"><small>FERRAMENTAS</small><span>Figma, VS Code, GitHub Pages</span></div>
+        <div class="lz-fact"><small>ENTREGAS</small><span>Design system, 25 telas, protótipo e site</span></div>
+        <div class="lz-fact"><small>STATUS</small><span>No ar, em evolução com a cliente</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap case-body">
+
+    <!-- ================= 01 PROJETO ================= -->
+    <section class="case-section" id="projeto">
+      <div class="case-section-head"><span class="case-num">#01</span><h2>O Projeto</h2></div>
+      <p>A Lazúli é uma confeitaria artesanal que trabalha <strong>sob encomenda</strong>: bolos de festa, tortas, docinhos e salgados feitos em pequenas fornadas. Até então, todo pedido nascia numa conversa de WhatsApp ou Instagram, o que significava responder sempre as mesmas perguntas (sabores, tamanhos, preço, entrega) antes de o pedido começar de verdade.</p>
+      <p>A cliente pediu um site que funcionasse como <strong>vitrine e balcão de pedidos ao mesmo tempo</strong>, com a cara delicada da marca e sem obrigar ninguém a criar conta ou pagar por uma plataforma de e-commerce. A solução foi deixar o cliente montar o pedido completo no site e mandar tudo pronto para o WhatsApp, o canal que a confeitaria já usa no dia a dia.</p>
+      <div class="case-cards">
+        <div class="case-card">
+          <h3><i class="bi bi-chat-dots"></i> O problema</h3>
+          <p>Pedidos chegavam soltos e incompletos pelo WhatsApp, com muita troca de mensagem até fechar sabor, tamanho, data e entrega.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-bullseye"></i> O objetivo</h3>
+          <p>Um cardápio claro e um fluxo de pedido curto que entregue à confeitaria uma mensagem completa, pronta para confirmar.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-shield-check"></i> As restrições</h3>
+          <p>Negócio pequeno: sem custo de plataforma, fácil de atualizar (preços e cardápio mudam) e fiel à identidade visual que a marca já tinha.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 02 SITE NO AR ================= -->
+    <section class="case-section" id="site">
+      <div class="case-section-head"><span class="case-num">#02</span><h2>O Site no Ar</h2></div>
+      <p>O site já está publicado e funcionando. Dá pra navegar aqui mesmo: troque entre a versão de computador e a de celular, abra um produto, escolha as opções e veja a sacola.</p>
+      <div class="lz-live-toolbar" role="group" aria-label="Tamanho da tela">
+        <button class="lz-toggle" type="button" data-view="desktop" aria-pressed="true"><i class="bi bi-display"></i> Computador</button>
+        <button class="lz-toggle" type="button" data-view="mobile" aria-pressed="false"><i class="bi bi-phone"></i> Celular</button>
+        <span class="lz-spacer"></span>
+        <a href="https://gaburiiere.github.io/lazuli/" target="_blank" rel="noopener" class="btn btn-ghost"><i class="bi bi-box-arrow-up-right"></i> Abrir em nova aba</a>
+      </div>
+      <div class="lz-live-stage" id="liveStage">
+        <div class="lz-browser">
+          <div class="lz-browser-bar"><span></span><span></span><span></span><div class="lz-url">gaburiiere.github.io/lazuli</div></div>
+          <div class="lz-live-frame">
+            <iframe src="https://gaburiiere.github.io/lazuli/" title="Site da Lazúli Confeitaria Artesanal" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <p class="lz-live-note"><i class="bi bi-info-circle"></i> Projeto em construção: o conteúdo e algumas funções ainda estão sendo ajustados com a cliente.</p>
+    </section>
+
+    <!-- ================= 03 UX ================= -->
+    <section class="case-section" id="ux">
+      <div class="case-section-head"><span class="case-num">#03</span><h2>Estratégia de UX</h2></div>
+      <p>Comecei mapeando a jornada de quem encomenda um doce. A pessoa geralmente já sabe <em>para quando</em> precisa e <em>mais ou menos o quê</em> quer; o que ela não sabe são as opções, o preço e as regras da confeitaria. Então o site precisava responder isso cedo e transformar a escolha num pedido completo, sem atrito.</p>
+
+      <div class="lz-journey">
+        <div class="lz-step"><i class="bi bi-eye"></i><h3>Descobrir</h3><p>Banner com os bolos da casa e acesso direto ao cardápio.</p></div>
+        <div class="lz-step"><i class="bi bi-grid"></i><h3>Escolher</h3><p>Cartões compactos, filtros por categoria e busca por sabor.</p></div>
+        <div class="lz-step"><i class="bi bi-sliders"></i><h3>Personalizar</h3><p>Ficha do produto com tamanho, massa e recheio.</p></div>
+        <div class="lz-step"><i class="bi bi-bag-heart"></i><h3>Montar o pedido</h3><p>Sacola lateral com data, entrega e pagamento.</p></div>
+        <div class="lz-step"><i class="bi bi-whatsapp"></i><h3>Finalizar</h3><p>Mensagem pronta no WhatsApp, Pix e acompanhamento.</p></div>
+      </div>
+
+      <p style="margin-top:34px">A partir dessa jornada, estas foram as principais decisões de experiência:</p>
+      <div class="lz-decisions">
+        <div class="lz-decision">
+          <h3><i class="bi bi-arrow-up-circle"></i> Cardápio logo depois do banner</h3>
+          <p>O cardápio sobe para a primeira dobra de rolagem. Seções institucionais ("Como pedir", "Sobre") ficam depois.</p>
+          <p class="why"><b>POR QUÊ</b>Quem chega ao site quer ver produto e preço. Menos rolagem até a decisão.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-layers"></i> Cartão resumido + ficha do produto</h3>
+          <p>O cartão mostra só nome, descrição curta e "a partir de". As opções aparecem numa ficha: modal no computador e <em>bottom sheet</em> no celular.</p>
+          <p class="why"><b>POR QUÊ</b>Revelação progressiva: a grade fica leve para comparar, e o detalhe aparece só quando há interesse.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-ui-radios"></i> Opções em chips, com contexto</h3>
+          <p>Tamanho, massa e pagamento são escolhidos em chips. No tamanho, cada chip já diz quantas fatias rende (15 cm · 15 a 20 fatias).</p>
+          <p class="why"><b>POR QUÊ</b>Toque fácil no celular, escolha visível de relance e menos dúvida do tipo "esse tamanho serve pra quantas pessoas?".</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-layout-sidebar-reverse"></i> Sacola lateral, sem trocar de página</h3>
+          <p>A sacola abre como gaveta por cima do site, com um contador animado no ícone a cada item adicionado.</p>
+          <p class="why"><b>POR QUÊ</b>O cliente não perde o lugar no cardápio e tem retorno imediato de que o item entrou.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-input-cursor-text"></i> Formulário curto e condicional</h3>
+          <p>Endereço só aparece se for entrega; troco só se o pagamento for em dinheiro; o CEP preenche rua e bairro e a taxa do bairro aparece de forma discreta.</p>
+          <p class="why"><b>POR QUÊ</b>Cada campo a menos reduz o abandono. A pessoa só vê o que se aplica ao pedido dela.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-calendar-check"></i> Regras da loja dentro do fluxo</h3>
+          <p>Data e horário respeitam a antecedência mínima e o horário de funcionamento. Se a data não serve, o site já sugere a primeira disponível.</p>
+          <p class="why"><b>POR QUÊ</b>Evita o pedido "impossível" que só seria recusado depois, na conversa.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-whatsapp"></i> WhatsApp como checkout</h3>
+          <p>Ao enviar, o pedido é registrado e uma mensagem completa (itens, opções, data, entrega, pagamento) é aberta no WhatsApp.</p>
+          <p class="why"><b>POR QUÊ</b>É onde a cliente e os clientes dela já conversam. Zero curva de aprendizado para os dois lados.</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-qr-code"></i> Pix e acompanhamento do pedido</h3>
+          <p>Depois do envio aparece o QR Code do Pix com "copia e cola" e uma linha do tempo do pedido: recebido, confirmado, em preparo, pronto, saiu para entrega, entregue.</p>
+          <p class="why"><b>POR QUÊ</b>Reduz a ansiedade pós-compra e as mensagens de "e aí, meu bolo já saiu?".</p>
+        </div>
+        <div class="lz-decision">
+          <h3><i class="bi bi-universal-access"></i> Acessibilidade e privacidade</h3>
+          <p>Carrossel do banner com botão de pausar, foco visível, rótulos para leitores de tela, diálogos com <code>aria-modal</code>, avisos com <code>aria-live</code>, política de privacidade e consentimento opcional para promoções.</p>
+          <p class="why"><b>POR QUÊ</b>Um site de pequeno negócio também precisa funcionar para todo mundo e respeitar a LGPD.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 04 DESIGN SYSTEM ================= -->
+    <section class="case-section" id="design-system">
+      <div class="case-section-head"><span class="case-num">#04</span><h2>Design System</h2></div>
+      <p>O ponto de partida foi o logo da Lazúli: lettering manuscrito em azul claro sobre branco, com ornamentos em traço fino (ramos e brilhos de quatro pontas). Daí saiu o conceito visual do site, que resumi numa frase guia: <strong>muito branco, blocos de azul gelo e traço fino</strong>. Delicado como a marca, mas organizado o bastante para vender.</p>
+      <p>Abaixo, o design system renderizado com as cores, fontes e componentes reais do site.</p>
+
+      <!-- conceito -->
+      <div class="brand-sheet gelo">
+        <svg class="bs-spark lz-float" style="right:8%;top:22%;width:18px;height:18px" aria-hidden="true"><use href="#lz-spark"/></svg>
+        <svg class="bs-spark lz-float" style="right:4%;bottom:12%;width:150px;height:75px;opacity:.45" aria-hidden="true"><use href="#lz-branch"/></svg>
+        <span class="bs-label">Hierarquia de títulos em 3 níveis</span>
+        <p class="bs-over">Feito à mão, com calma</p>
+        <p class="bs-title">Carinho em forma de <em style="color:var(--lz-azul);font-weight:400">cuidado.</em></p>
+        <p class="bs-lead">Sobretítulo manuscrito → título serifado → parágrafo leve. Esse trio se repete em todas as seções e dá ritmo à página.</p>
+      </div>
+
+      <!-- cores -->
+      <div class="brand-sheet">
+        <span class="bs-label">Cores</span>
+        <div class="swatches">
+          <div class="swatch"><div class="swatch-chip" style="background:#78b0db"></div><b>Azul Lazúli</b><code>#78B0DB</code><span>Botões, detalhes e ornamentos</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#6aa5d3"></div><b>Azul hover</b><code>#6AA5D3</code><span>Botão ao passar o mouse</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#22405f"></div><b>Azul profundo</b><code>#22405F</code><span>Títulos e preços</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#667c91"></div><b>Texto</b><code>#667C91</code><span>Parágrafos, cinza azulado</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#8ea0b1"></div><b>Texto suave</b><code>#8EA0B1</code><span>Legendas e rótulos</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#d5e5f2"></div><b>Linha</b><code>#D5E5F2</code><span>Bordas finas</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#eaf3fa"></div><b>Azul claro</b><code>#EAF3FA</code><span>Blocos de cor e seleção</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#f6f9fc"></div><b>Gelo</b><code>#F6F9FC</code><span>Fundo de seções</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#ffffff"></div><b>Branco</b><code>#FFFFFF</code><span>Fundo e cartões</span></div>
+          <div class="swatch"><div class="swatch-chip" style="background:#25d366"></div><b>WhatsApp</b><code>#25D366</code><span>Só no botão flutuante</span></div>
+        </div>
+        <p class="bs-lead" style="margin-top:22px;max-width:70ch">O texto nunca é preto: é um cinza azulado, e os títulos usam o azul profundo. Isso mantém o contraste de leitura e deixa a página inteira na mesma família de cor. O verde do WhatsApp é a única cor fora da paleta, reservada para o botão de contato, para ser reconhecido na hora.</p>
+      </div>
+
+      <!-- tipografia -->
+      <div class="brand-sheet gelo">
+        <span class="bs-label">Tipografia</span>
+        <div class="type-grid">
+          <div class="type-card">
+            <div class="aa" style="font-family:var(--lz-script);color:var(--lz-azul)">Aa</div>
+            <h4>Allura</h4>
+            <p>Manuscrita, ecoa o lettering do logo. Usada só em frases curtas.</p>
+            <span class="role">sobretítulos</span>
+          </div>
+          <div class="type-card">
+            <div class="aa" style="font-family:var(--lz-serif);font-weight:500">Aa</div>
+            <h4>Cormorant</h4>
+            <p>Serifada elegante, com itálico expressivo para palavras de destaque.</p>
+            <span class="role">títulos, nomes de produto</span>
+          </div>
+          <div class="type-card">
+            <div class="aa" style="font-family:var(--lz-sans);font-weight:300">Aa</div>
+            <h4>Jost (300 / 400 / 500)</h4>
+            <p>Geométrica e leve. Em caixa alta espaçada vira rótulo e botão.</p>
+            <span class="role">texto, rótulos, botões, preços</span>
+          </div>
+        </div>
+        <div class="type-scale">
+          <div class="type-row"><small>Display / H1 · Cormorant 500 · 89.6px</small><span class="s" style="font-family:var(--lz-serif);font-weight:500;font-size:clamp(34px,5vw,56px);line-height:1">Carinho em forma de cuidado.</span></div>
+          <div class="type-row"><small>Título de seção · Cormorant 500 · 51.2px</small><span class="s" style="font-family:var(--lz-serif);font-weight:500;font-size:clamp(28px,3.4vw,40px);line-height:1.05">Cardápio</span></div>
+          <div class="type-row"><small>Título de card · Cormorant 500 · 24px</small><span class="s" style="font-family:var(--lz-serif);font-weight:500;font-size:24px">Bolo de festa</span></div>
+          <div class="type-row"><small>Sobretítulo · Allura · 33.6px</small><span class="s" style="font-family:var(--lz-script);font-size:32px;color:var(--lz-azul);line-height:1">Do forno para você</span></div>
+          <div class="type-row"><small>Texto · Jost 300 · 16px</small><span class="s" style="font-family:var(--lz-sans);font-weight:300;font-size:16px;color:var(--lz-texto)">Você monta o pedido aqui e finaliza pelo WhatsApp.</span></div>
+          <div class="type-row"><small>Rótulo / botão · Jost 500 · 11.5px · +0.2em</small><span class="s" style="font-family:var(--lz-sans);font-weight:500;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase">Ver cardápio · Como pedir</span></div>
+          <div class="type-row"><small>Preço · Jost 300 · 17.9px</small><span class="s" style="font-family:var(--lz-sans);font-weight:300;font-size:18px"><span style="font-size:12px;color:var(--lz-texto-2)">a partir de</span> R$ 80,00</span></div>
+        </div>
+      </div>
+
+      <!-- componentes -->
+      <div class="brand-sheet">
+        <span class="bs-label">Componentes (interativos, pode testar)</span>
+        <div class="comp-grid">
+          <div class="comp">
+            <small>Botões · pílula, caixa alta espaçada</small>
+            <div class="row">
+              <button class="lz-btn" type="button">Ver cardápio <i class="bi bi-arrow-right"></i></button>
+              <button class="lz-btn ghost" type="button">Como pedir</button>
+            </div>
+            <div class="row">
+              <button class="lz-btn" type="button"><i class="bi bi-whatsapp"></i> Encomendar</button>
+              <span class="lz-wa" role="img" aria-label="Botão flutuante do WhatsApp"><i class="bi bi-whatsapp"></i></span>
+            </div>
+          </div>
+          <div class="comp">
+            <small>Chips de opção · seleção única</small>
+            <span class="lz-field-label">Tamanho</span>
+            <div class="row lz-chipset">
+              <button class="lz-chip" type="button" aria-pressed="true">15 cm<small>15 a 20 fatias</small></button>
+              <button class="lz-chip" type="button" aria-pressed="false">20 cm<small>20 a 25 fatias</small></button>
+              <button class="lz-chip" type="button" aria-pressed="false">25 cm<small>25 a 30 fatias</small></button>
+            </div>
+            <span class="lz-field-label">Massa</span>
+            <div class="row lz-chipset">
+              <button class="lz-chip" type="button" aria-pressed="true">Chocolate</button>
+              <button class="lz-chip" type="button" aria-pressed="false">Baunilha</button>
+            </div>
+          </div>
+          <div class="comp">
+            <small>Campo, quantidade e preço</small>
+            <label class="lz-field-label" for="demoNome">Nome</label>
+            <input class="lz-input" id="demoNome" placeholder="Como podemos te chamar?">
+            <div class="row" style="justify-content:space-between">
+              <div class="lz-stepper" id="demoStepper">
+                <button type="button" data-d="-1" aria-label="Diminuir">−</button><output>1</output><button type="button" data-d="1" aria-label="Aumentar">+</button>
+              </div>
+              <span style="font-family:var(--lz-sans);font-size:18px;color:var(--lz-profundo)" id="demoTotal">R$ 80,00</span>
+            </div>
+          </div>
+          <div class="comp lz-product">
+            <small style="text-align:left">Cartão de produto · resumido</small>
+            <div class="ph"><img src="img/produto-bolo.webp" alt="Bolo de chantilly com morangos"></div>
+            <span class="cat">Bolos</span>
+            <h5>Bolo de festa</h5>
+            <p>Escolha o tamanho, a massa e o recheio.</p>
+            <div class="price">a partir de <b>R$ 80,00</b> cada</div>
+            <div><button class="lz-btn ghost" type="button">Escolher opções <i class="bi bi-arrow-right"></i></button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tokens + ornamentos -->
+      <div class="brand-sheet gelo">
+        <span class="bs-label">Tokens de forma, sombra e espaço</span>
+        <div class="token-scroll">
+          <table class="token-table">
+            <thead><tr><th>Token</th><th>Valor</th><th>Uso</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><code>--r-sm</code></td><td>12px</td><td>Campos e miniaturas</td><td><span class="token-demo" style="border-radius:12px"></span></td></tr>
+              <tr><td><code>--r-md</code></td><td>18px</td><td>Cartões de produto</td><td><span class="token-demo" style="border-radius:18px"></span></td></tr>
+              <tr><td><code>--r-lg</code></td><td>24px</td><td>Menu flutuante, fichas, modais</td><td><span class="token-demo" style="border-radius:24px"></span></td></tr>
+              <tr><td><code>999px</code></td><td>pílula</td><td>Botões, chips, quantidade</td><td><span class="token-demo" style="border-radius:999px"></span></td></tr>
+              <tr><td><code>--sombra</code></td><td>0 18px 50px -24px rgba(34,64,95,.22)</td><td>Elementos em destaque</td><td><span class="token-demo" style="border-radius:12px;box-shadow:0 18px 50px -24px rgba(34,64,95,.5)"></span></td></tr>
+              <tr><td><code>--sombra-leve</code></td><td>0 10px 30px -18px rgba(34,64,95,.18)</td><td>Menu e cartões</td><td><span class="token-demo" style="border-radius:12px;box-shadow:0 10px 30px -18px rgba(34,64,95,.45)"></span></td></tr>
+              <tr><td><code>--wrap</code></td><td>1180px</td><td>Largura máxima do conteúdo</td><td></td></tr>
+              <tr><td><code>.sec</code></td><td>clamp(70px, 10vw, 130px)</td><td>Respiro vertical entre seções, fluido</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="bs-lead" style="margin-top:18px;max-width:72ch">As sombras são sempre tingidas de azul profundo (nunca preto) e bem difusas, para os elementos "flutuarem" sem pesar no branco.</p>
+
+        <span class="bs-label" style="margin-top:34px">Ornamentos · traço fino, animação lenta</span>
+        <div class="orn-row">
+          <figure><svg class="lz-float" width="34" height="34" aria-hidden="true"><use href="#lz-spark"/></svg><figcaption>brilho</figcaption></figure>
+          <figure><svg class="lz-float" width="160" height="80" aria-hidden="true" style="animation-delay:-3s"><use href="#lz-branch"/></svg><figcaption>ramo</figcaption></figure>
+          <figure><svg width="200" height="20" aria-hidden="true"><use href="#lz-filete"/></svg><figcaption>filete divisor</figcaption></figure>
+        </div>
+        <p class="bs-lead" style="margin-top:18px;max-width:72ch">Os mesmos desenhos do logo foram redesenhados em SVG e espalhados pelas seções com opacidade baixa e uma flutuação de 9 a 13 segundos. Quem prefere menos movimento no sistema não vê a animação.</p>
+      </div>
+
+      <p style="margin-top:30px">No Figma, o design system está organizado em três quadros: <strong>Fundamentos</strong> (cores e escala tipográfica), <strong>Componentes</strong> (botões e seus estados de hover, chips, cartão de produto e o carrossel orbital do banner) e <strong>Imagens do site</strong>.</p>
+      <div class="case-gallery">
+        <img src="img/ds-fundamentos.webp" alt="Quadro Fundamentos do design system no Figma: cores e tipografia" loading="lazy">
+        <img src="img/ds-componentes.webp" alt="Quadro Componentes do design system no Figma" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ================= 05 UI ================= -->
+    <section class="case-section" id="ui">
+      <div class="case-section-head"><span class="case-num">#05</span><h2>Interface</h2></div>
+      <p>O destaque da home é o <strong>carrossel orbital</strong>: três bolos da casa giram ao redor de um disco azul gelo, trocando sozinhos a cada 2,6 segundos, com o nome do bolo em itálico logo abaixo e um botão para pausar. Ele substitui o banner de foto comum e já apresenta o produto como protagonista, com o mesmo círculo que se repete nas fotos do cardápio.</p>
+      <p>O menu é uma barra flutuante arredondada que ganha fundo ao rolar. As seções alternam fundo branco e gelo para separar os assuntos sem precisar de linhas, e cada uma abre com o trio sobretítulo, título e parágrafo.</p>
+      <div class="lz-shots">
+        <figure><img src="img/site-cardapio.webp" alt="Seção Cardápio com filtros, busca e cartões de produto" loading="lazy"><figcaption><b>Cardápio.</b> Filtros em chips, busca por sabor e cartões resumidos.</figcaption></figure>
+        <figure><img src="img/site-como-pedir.webp" alt="Seção Como pedir com três passos" loading="lazy"><figcaption><b>Como pedir.</b> Três passos e as regras da loja logo abaixo.</figcaption></figure>
+        <figure><img src="img/site-sobre.webp" alt="Seção Sobre a confeitaria com diferenciais" loading="lazy"><figcaption><b>Sobre.</b> Foto em moldura circular e quatro diferenciais com ícones de traço fino.</figcaption></figure>
+        <figure><img src="img/figma-ficha.webp" alt="Ficha do produto Bolo de festa com opções de tamanho, massa e recheio" loading="lazy"><figcaption><b>Ficha do produto.</b> Opções em chips, preço e quantidade no mesmo lugar.</figcaption></figure>
+      </div>
+
+      <p style="margin-top:34px">O fluxo de pedido, do carrinho ao acompanhamento:</p>
+      <div class="lz-shots">
+        <figure><img src="img/figma-sacola.webp" alt="Sacola lateral com item, subtotal e dados do pedido" loading="lazy"><figcaption><b>Sacola.</b> Gaveta lateral com itens, observação por item e dados do pedido.</figcaption></figure>
+        <figure><img src="img/figma-pedido-pix.webp" alt="Pedido recebido com QR Code do Pix" loading="lazy"><figcaption><b>Pedido recebido.</b> Número do pedido, QR Code e Pix copia e cola.</figcaption></figure>
+        <figure><img src="img/figma-acompanhar.webp" alt="Linha do tempo de acompanhamento do pedido" loading="lazy"><figcaption><b>Acompanhar pedido.</b> Linha do tempo com seis etapas.</figcaption></figure>
+        <figure><img src="img/site-full.webp" alt="Página inicial completa da Lazúli" loading="lazy" style="object-fit:cover;object-position:top;aspect-ratio:1440/900"><figcaption><b>Home completa.</b> Clique para ver a página inteira.</figcaption></figure>
+      </div>
+
+      <p style="margin-top:34px">No celular, a ficha do produto vira um <em>bottom sheet</em> (sobe da parte de baixo, perto do polegar), o menu vira um botão de três linhas e o título do banner centraliza:</p>
+      <div class="lz-phones">
+        <figure><img src="img/site-m-hero.webp" alt="Home da Lazúli no celular" loading="lazy"><figcaption><b>Home</b></figcaption></figure>
+        <figure><img src="img/figma-m-ficha.webp" alt="Ficha do produto no celular" loading="lazy"><figcaption><b>Ficha (bottom sheet)</b></figcaption></figure>
+        <figure><img src="img/figma-m-sacola.webp" alt="Sacola no celular" loading="lazy"><figcaption><b>Sacola</b></figcaption></figure>
+        <figure><img src="img/figma-m-acompanhar.webp" alt="Acompanhamento do pedido no celular" loading="lazy"><figcaption><b>Acompanhar</b></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ================= 06 FIGMA ================= -->
+    <section class="case-section" id="figma">
+      <div class="case-section-head"><span class="case-num">#06</span><h2>Projeto e Protótipo no Figma</h2></div>
+      <p>O arquivo do Figma tem as versões de computador e de celular completas, com protótipo navegável: dá pra abrir os produtos, adicionar à sacola, ver o pedido recebido e o acompanhamento. Os botões têm estados de hover e o carrossel do banner anima sozinho.</p>
+
+      <div class="lz-figma-structure">
+        <div class="case-card"><h3><i class="bi bi-display"></i> Desktop</h3><p>12 frames em 1440px</p><ul><li>Home completa</li><li>8 fichas de produto</li><li>Sacola, pedido recebido, acompanhar</li></ul></div>
+        <div class="case-card"><h3><i class="bi bi-phone"></i> Mobile</h3><p>13 frames em 390px</p><ul><li>Home e menu aberto</li><li>8 fichas em bottom sheet</li><li>Sacola, pedido recebido, acompanhar</li></ul></div>
+        <div class="case-card"><h3><i class="bi bi-palette"></i> Design System</h3><p>3 quadros de referência</p><ul><li>Fundamentos (cores e tipografia)</li><li>Componentes e estados</li><li>Imagens do site</li></ul></div>
+      </div>
+
+      <div class="lz-figma-tabs" role="tablist" aria-label="Visualização do Figma">
+        <button class="lz-toggle" type="button" role="tab" data-figma="proto-desktop" aria-pressed="true"><i class="bi bi-play-circle"></i> Protótipo · computador</button>
+        <button class="lz-toggle" type="button" role="tab" data-figma="proto-mobile" aria-pressed="false"><i class="bi bi-phone"></i> Protótipo · celular</button>
+        <button class="lz-toggle" type="button" role="tab" data-figma="file" aria-pressed="false"><i class="bi bi-vector-pen"></i> Arquivo de design</button>
+      </div>
+      <div class="lz-figma-frame" id="figmaFrame">
+        <div class="lz-figma-ph" id="figmaPh">
+          <i class="bi bi-vector-pen"></i>
+          <p>O protótipo do Figma é carregado aqui. Ele é pesado, então só abre quando você pedir.</p>
+          <button class="btn btn-primary" type="button" id="figmaLoad"><i class="bi bi-play-fill"></i> Carregar protótipo</button>
+        </div>
+      </div>
+      <div class="case-links">
+        <a href="https://www.figma.com/design/VjtxKe4Nml2oIpnmpECodk/Lazuli" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-vector-pen"></i> Abrir arquivo no Figma</a>
+        <a href="https://www.figma.com/proto/VjtxKe4Nml2oIpnmpECodk/Lazuli?node-id=4-1362&amp;page-id=1%3A3&amp;starting-point-node-id=4%3A1362&amp;scaling=scale-down-width&amp;content-scaling=fixed" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-display"></i> Protótipo computador</a>
+        <a href="https://www.figma.com/proto/VjtxKe4Nml2oIpnmpECodk/Lazuli?node-id=4-2336&amp;page-id=0%3A1&amp;starting-point-node-id=4%3A2336&amp;scaling=scale-down&amp;content-scaling=fixed" target="_blank" rel="noopener" class="btn btn-outline"><i class="bi bi-phone"></i> Protótipo celular</a>
+      </div>
+    </section>
+
+    <!-- ================= 07 FIGMA → CÓDIGO ================= -->
+    <section class="case-section" id="codigo">
+      <div class="case-section-head"><span class="case-num">#07</span><h2>Do Figma ao Site no Ar</h2></div>
+      <p>Uma parte importante do projeto foi garantir que o site publicado fosse <strong>fiel ao Figma</strong>. Para isso, os nomes do design system viraram, literalmente, as variáveis do código: o mesmo "Azul profundo" do Figma é o <code>--profundo</code> do CSS. Quando uma cor muda, muda em um lugar só.</p>
+      <pre class="lz-code"><span class="c">/* Layout: muito branco, blocos de azul gelo, traço fino. */</span>
+<span class="k">:root</span> {
+  <span class="k">--azul</span>: <span class="v">#78b0db</span>;       <span class="c">/* botões, detalhes, ornamentos */</span>
+  <span class="k">--azul-claro</span>: <span class="v">#eaf3fa</span>; <span class="c">/* blocos de cor */</span>
+  <span class="k">--gelo</span>: <span class="v">#f6f9fc</span>;       <span class="c">/* fundo de seções */</span>
+  <span class="k">--profundo</span>: <span class="v">#22405f</span>;   <span class="c">/* títulos e preços */</span>
+  <span class="k">--texto</span>: <span class="v">#667c91</span>;      <span class="c">/* parágrafos */</span>
+  <span class="k">--f-script</span>: <span class="v">"Allura"</span>;  <span class="k">--f-serif</span>: <span class="v">"Cormorant"</span>;  <span class="k">--f-sans</span>: <span class="v">"Jost"</span>;
+}</pre>
+      <div class="case-cards">
+        <div class="case-card">
+          <h3><i class="bi bi-pencil-square"></i> Fácil de atualizar</h3>
+          <p>Cardápio, preços, horários, bairros e WhatsApp ficam num bloco de configuração no topo do código, em português. Trocar um preço é editar uma linha.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-lightning-charge"></i> Leve</h3>
+          <p>Sem framework: um HTML com CSS e JavaScript próprios, imagens em WebP com miniaturas e carregamento sob demanda.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-github"></i> Publicação gratuita</h3>
+          <p>Hospedado no GitHub Pages: sem mensalidade de plataforma, com histórico de cada alteração.</p>
+        </div>
+        <div class="case-card">
+          <h3><i class="bi bi-diagram-3"></i> Conectado à gestão</h3>
+          <p>O site está sendo ligado a um painel de pedidos da confeitaria, para os pedidos e o status de acompanhamento saírem do mesmo lugar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 08 PRÓXIMOS PASSOS ================= -->
+    <section class="case-section" id="proximos">
+      <div class="case-section-head"><span class="case-num">#08</span><h2>Status e Próximos Passos</h2></div>
+      <p>O projeto está no ar e evoluindo junto com a cliente. Este case vai ser atualizado conforme as próximas fases forem concluídas.</p>
+      <ul class="lz-roadmap">
+        <li class="done"><i class="bi bi-check-circle-fill"></i><span><b>Design system e telas no Figma</b> · desktop, mobile e protótipo navegável</span></li>
+        <li class="done"><i class="bi bi-check-circle-fill"></i><span><b>Site publicado</b> · cardápio, ficha do produto, sacola e finalização pelo WhatsApp</span></li>
+        <li class="doing"><i class="bi bi-hourglass-split"></i><span><b>Pix, cupons e acompanhamento</b> · integração com o painel de pedidos da confeitaria</span></li>
+        <li class="next"><i class="bi bi-circle"></i><span><b>Depoimentos reais</b> · a seção já está desenhada e entra quando houver avaliações de clientes</span></li>
+        <li class="next"><i class="bi bi-circle"></i><span><b>Teste de usabilidade</b> · observar clientes reais fazendo um pedido do início ao fim e ajustar o fluxo</span></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="wrap case-footer-nav">
+    <a href="../hub-petz/index.html" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Missão anterior: HUB Petz</a>
+    <a href="../../index.html#contato" class="btn btn-primary">Ir para contato <i class="bi bi-arrow-right"></i></a>
+  </div>
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="../../case.js"></script>
+<script>
+// ---------- lightbox para as galerias próprias deste case ----------
+(() => {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.lz-shots img, .lz-phones img').forEach((img) => {
+    img.addEventListener('click', () => { lbImg.src = img.src; lb.classList.add('open'); });
+  });
+  document.querySelectorAll('.brand-sheet, .lz-journey').forEach((el) => el.classList.add('reveal'));
+})();
+
+// ---------- site ao vivo: computador / celular ----------
+(() => {
+  const stage = document.getElementById('liveStage');
+  const btns = document.querySelectorAll('[data-view]');
+  btns.forEach((b) => b.addEventListener('click', () => {
+    btns.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    stage.classList.toggle('is-mobile', b.dataset.view === 'mobile');
+  }));
+})();
+
+// ---------- componentes interativos do design system ----------
+(() => {
+  document.querySelectorAll('.lz-chipset').forEach((set) => {
+    set.addEventListener('click', (e) => {
+      const chip = e.target.closest('.lz-chip');
+      if (!chip) return;
+      set.querySelectorAll('.lz-chip').forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+    });
+  });
+  const stepper = document.getElementById('demoStepper');
+  const out = stepper.querySelector('output');
+  const total = document.getElementById('demoTotal');
+  stepper.addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b) return;
+    const n = Math.min(20, Math.max(1, Number(out.textContent) + Number(b.dataset.d)));
+    out.textContent = n;
+    total.textContent = (n * 80).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  });
+})();
+
+// ---------- Figma embed (carrega só quando pedido) ----------
+(() => {
+  const FILE = 'VjtxKe4Nml2oIpnmpECodk';
+  const urls = {
+    'proto-desktop': `https://www.figma.com/proto/${FILE}/Lazuli?node-id=4-1362&page-id=1%3A3&starting-point-node-id=4%3A1362&scaling=scale-down-width&content-scaling=fixed&hide-ui=1`,
+    'proto-mobile': `https://www.figma.com/proto/${FILE}/Lazuli?node-id=4-2336&page-id=0%3A1&starting-point-node-id=4%3A2336&scaling=scale-down&content-scaling=fixed&hide-ui=1`,
+    'file': `https://www.figma.com/design/${FILE}/Lazuli?node-id=1-2`,
+  };
+  const labels = { 'proto-desktop': 'Carregar protótipo', 'proto-mobile': 'Carregar protótipo', 'file': 'Carregar arquivo' };
+  const frame = document.getElementById('figmaFrame');
+  const ph = document.getElementById('figmaPh');
+  const loadBtn = document.getElementById('figmaLoad');
+  const tabs = document.querySelectorAll('[data-figma]');
+  let current = 'proto-desktop';
+  let loaded = false;
+
+  function mount() {
+    const old = frame.querySelector('iframe'); if (old) old.remove();
+    const ifr = document.createElement('iframe');
+    ifr.src = 'https://www.figma.com/embed?embed_host=share&url=' + encodeURIComponent(urls[current]);
+    ifr.title = 'Figma: Lazúli';
+    ifr.allowFullscreen = true;
+    frame.appendChild(ifr);
+    ph.hidden = true;
+    loaded = true;
+  }
+  loadBtn.addEventListener('click', mount);
+  tabs.forEach((t) => t.addEventListener('click', () => {
+    current = t.dataset.figma;
+    tabs.forEach((x) => x.setAttribute('aria-pressed', String(x === t)));
+    loadBtn.innerHTML = '<i class="bi bi-play-fill"></i> ' + labels[current];
+    if (loaded) mount();
+  }));
+})();
+</script>
+</body>
+</html>
